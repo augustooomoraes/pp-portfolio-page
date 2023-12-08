@@ -1,7 +1,7 @@
-import { Aleo } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "./ui/navbar";
 
+import { Aleo } from "next/font/google";
 const aleo = Aleo({ subsets: ["latin"] });
 
 export const metadata = {

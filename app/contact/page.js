@@ -1,5 +1,5 @@
 import { HiOutlineHandRaised } from "react-icons/hi2";
-// import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaCakeCandles } from "react-icons/fa6";
 import { LuMail } from "react-icons/lu";
 import { FaWhatsapp } from "react-icons/fa6";
@@ -18,20 +18,25 @@ import { FaGithub } from "react-icons/fa6";
 // import { FaCodepen } from "react-icons/fa6";
 import { FaFigma } from "react-icons/fa6";
 
+import { Nunito_Sans } from "next/font/google";
+import { Aleo } from "next/font/google";
+import classNames from "classnames";
+const nunito_sans = Nunito_Sans({ subsets: ["latin"] });
+const aleo = Aleo({ subsets: ["latin"] });
+
 export const metadata = {
   title: "Contato",
 };
 
 export default function Page() {
   return (
-    <main>
+    <main className={classNames(nunito_sans.className)}>
       <section>
-        <h1>Contato</h1>
+        <h1 className={aleo.className}>Contato</h1>
         <div className="grid gap-y-[6rem] items-center">
           {/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */}
           <div className="inline-grid grid-cols-[auto_1fr] items-center">
             <a className="pointer-events-none">
-              {" "}
               {/* inactive link */}
               <div className="inline-grid grid-cols-[30rem_auto] items-center">
                 <HiOutlineHandRaised className="justify-self-center" />
@@ -43,13 +48,23 @@ export default function Page() {
           {/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */}
           <div className="inline-grid grid-cols-[auto_1fr] items-center">
             <a className="pointer-events-none">
-              {" "}
               {/* inactive link */}
               <div className="inline-grid grid-cols-[30rem_auto] items-center">
                 <FaCakeCandles className="justify-self-center" />
                 <span className="pl-[20rem]">
-                  14 de abril <em>(23 anos)</em>
+                  14 de abril <span className="italic font-light">(23 anos)</span>
                 </span>
+              </div>
+            </a>
+            <div></div>
+          </div>
+          {/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */}
+          <div className="inline-grid grid-cols-[auto_1fr] items-center">
+            <a className="pointer-events-none">
+              {/* inactive link */}
+              <div className="inline-grid grid-cols-[30rem_auto] items-center">
+                <FaMapMarkerAlt className="justify-self-center" />
+                <span className="pl-[20rem]">Caxias do Sul – RS</span>
               </div>
             </a>
             <div></div>
@@ -105,7 +120,7 @@ export default function Page() {
             <div></div>
           </div>
           {/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */}
-          <div className="inline-grid grid-cols-[auto_1fr] items-center">
+          {/* <div className="inline-grid grid-cols-[auto_1fr] items-center">
             <a target="_blank" href="https://www.figma.com/@augustomoraes">
               <div className="inline-grid grid-cols-[30rem_auto] items-center">
                 <FaFigma className="justify-self-center" />
@@ -113,7 +128,7 @@ export default function Page() {
               </div>
             </a>
             <div></div>
-          </div>
+          </div> */}
           {/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */}
         </div>
       </section>

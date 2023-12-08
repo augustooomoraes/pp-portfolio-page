@@ -4,7 +4,7 @@ import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 export default function Home() {
   return (
     <main>
-      <div className="flex flex-row flex-nowrap justify-between items-center gap-[90px]">
+      <div className="flex flex-col-reverse min-[840px]:flex-row flex-nowrap justify-between items-center gap-[90px]">
         <section>
           <h1>Olá!</h1>
           <p className="home-word-spacing text-light tracking-[0.4rem]">

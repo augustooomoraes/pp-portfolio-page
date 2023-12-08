@@ -101,6 +101,9 @@
   }
 }
 
+/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */
+/* x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x */
+
 * {
   margin: 0;
   padding: 0;
@@ -116,21 +119,26 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   font-size: 24rem;
   color: rgb(var(--font-color-primary-rgb));
   background: linear-gradient(81deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0) 100%), rgb(var(--surface-color-primary-rgb));
+
+  display: grid;
+  grid-template-columns: minmax(40px, 1fr) minmax(min-content, 1000px) minmax(40px, 1fr);
 }
 
 nav {
-  width: var(--content-width);
+  min-width: 300px;
+  max-width: var(--content-width);
 }
 
 main {
-  width: var(--content-width);
+  width: 100%;
   padding-top: 95px;
   margin: 0 auto;
 
+  grid-column: 2 / 3;
   display: block;
 }
 
@@ -143,6 +151,10 @@ h1 {
 h2 {
   font-weight: 600;
   font-size: var(--header2-size);
+  margin-bottom: var(--header2-spacing);
+}
+
+.mb-h2 {
   margin-bottom: var(--header2-spacing);
 }
 
@@ -196,6 +208,9 @@ a {
 strong {
   font-weight: 500;
 }
+
+/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */
+/* x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x */
 
 .home-word-spacing {
   word-spacing: 0.4rem;
