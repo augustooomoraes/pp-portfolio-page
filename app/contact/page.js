@@ -111,10 +111,10 @@ export default function Page() {
           </div>
           {/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */}
           <div className="inline-grid grid-cols-[auto_1fr] items-center">
-            <a target="_blank" href="https://github.com/augustoomoraes">
+            <a target="_blank" href="https://github.com/augustooomoraes">
               <div className="inline-grid grid-cols-[30rem_auto] items-center">
                 <FaGithub className="justify-self-center" />
-                <span className="pl-[20rem]">augustoo&shy;moraes</span>
+                <span className="pl-[20rem]">augustooo&shy;moraes</span>
               </div>
             </a>
             <div></div>

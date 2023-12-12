@@ -24,7 +24,7 @@ export default function Home() {
           </a>
         </div>
         <div className="home-link-container">
-          <a className="home-link" target="_blank" href="https://github.com/augustoomoraes">
+          <a className="home-link" target="_blank" href="https://github.com/augustooomoraes">
             <FaGithub />
             <span>GitHub</span>
           </a>
