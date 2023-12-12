@@ -34,15 +34,21 @@
   --color-primary-rgb: 7, 43, 54;
   --color-secondary: #05526a;
   --color-secondary-rgb: 5, 82, 106;
-  /* --color-terciary: ;
-  --color-terciary-rgb: ;
-  --color-quaternary: ;
-  --color-quaternary-rgb: ; */
+  --color-terciary: #7ca7c0;
+  --color-terciary-rgb: 124, 167, 192;
+  --color-quaternary: #a2bac7;
+  --color-quaternary-rgb: 162, 186, 199;
 
-  --surface-color-primary: var(--color-white);
-  --surface-color-primary-rgb: var(--color-white-rgb);
-  --surface-color-secondary-: var(--color-grey-200);
-  --surface-color-secondary--rgb: var(--color-grey-200-rgb);
+  --surface-color-primary: var(--color-grey-200);
+  --surface-color-primary-rgb: var(--color-grey-200-rgb);
+  --surface-color-secondary: var(--color-quaternary);
+  --surface-color-secondary-rgb: var(--color-quaternary-rgb);
+  --surface-color-terciary: var(--color-terciary);
+  --surface-color-terciary-rgb: var(--color-terciary-rgb);
+  --surface-color-quaternary: var(--color-white);
+  --surface-color-quaternary-rgb: var(--color-white-rgb);
+
+  --surface-color-hover: rgba(var(--color-white-rgb), 0.15);
 
   --font-color-primary: var(--color-black);
   --font-color-primary-rgb: var(--color-black-rgb);
@@ -82,7 +88,7 @@
   --nav-border: solid 1px #777;
   --reg-text-margin-bottom: 10px;
 
-  --content-width: 1000px;
+  --content-max-width: 1000px;
 
   scroll-behavior: smooth;
 }
@@ -93,6 +99,10 @@
     --surface-color-primary-rgb: var(--color-primary-rgb);
     --surface-color-secondary: var(--color-secondary);
     --surface-color-secondary-rgb: var(--color-secondary-rgb);
+    --surface-color-terciary: var(--color-terciary);
+    --surface-color-terciary-rgb: var(--color-terciary-rgb);
+    --surface-color-quaternary: var(--color-quaternary);
+    --surface-color-quaternary-rgb: var(--color-quaternary-rgb);
 
     --font-color-primary: var(--color-white);
     --font-color-primary-rgb: var(--color-white-rgb);
@@ -119,18 +129,26 @@ html {
 }
 
 body {
-  /* min-height: 100vh; */
+  min-height: 100vh;
+  /* min-width: 100vw; */
   font-size: 24rem;
   color: rgb(var(--font-color-primary-rgb));
+
   background: linear-gradient(81deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0) 100%), rgb(var(--surface-color-primary-rgb));
+  /*
+  Com o gradient em ângulo, páginas com mais de 100vh ficavam com o bg diferente.
+  Melhor seria fazê-lo começar de cima/esquerda – não funcionou com o background-position –, mas não consegui. 
+  */
+  background-attachment: fixed;
 
   display: grid;
+  align-content: start;
   grid-template-columns: minmax(40px, 1fr) minmax(min-content, 1000px) minmax(40px, 1fr);
 }
 
 nav {
-  min-width: 300px;
-  max-width: var(--content-width);
+  /* min-width: 300px; */
+  max-width: var(--content-max-width);
 }
 
 main {
@@ -172,7 +190,7 @@ h4 {
 
 p {
   /* font-family: var(--font-secondary); */
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--paragraph-size);
 
   line-height: 150%;
@@ -188,8 +206,10 @@ li {
   font-weight: 400;
   font-size: var(--list-item-size);
 
-  line-height: 150%;
+  line-height: 130%;
   line-height-step: 250%;
+
+  margin: 4rem 0;
 }
 
 a {
@@ -205,10 +225,6 @@ a {
   }
 }
 
-strong {
-  font-weight: 500;
-}
-
 /* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */
 /* x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x */
 
@@ -220,12 +236,18 @@ strong {
   margin: var(--button-spacing) 0;
 }
 
-.home-link {
+.home-link-container {
   background-color: var(--surface-color-secondary);
-  padding: 15px 24px 15px 18px;
   border-radius: 8px;
 
   box-shadow: 5px 5px 5px 0px #00000020;
+
+  width: max-content;
+}
+
+.home-link {
+  padding: 15px 24px 15px 18px;
+  border-radius: 8px;
 
   display: flex;
   flex-flow: row nowrap;
@@ -233,4 +255,17 @@ strong {
   align-items: center;
 
   gap: 18px;
+
+  &:hover {
+    background-color: var(--surface-color-hover);
+  }
+}
+
+.nav-link-list {
+  background-color: var(--surface-color-secondary);
+  box-shadow: 5px 5px 5px 0px #00000020;
+}
+
+.nav-link:hover {
+  background-color: var(--surface-color-hover);
 }

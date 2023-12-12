@@ -7,28 +7,34 @@ export default function Home() {
       <div className="flex flex-col-reverse min-[840px]:flex-row flex-nowrap justify-between items-center gap-[90px]">
         <section>
           <h1>Olá!</h1>
-          <p className="home-word-spacing text-light tracking-[0.4rem]">
-            Chamo-me Augusto, moro em Caxias do Sul – RS e estudo <strong>programação e desenvolvimento web</strong> pela internet.
+          <p className="home-word-spacing dark:tracking-[0.4rem] dark:font-light">
+            Chamo-me Augusto, moro em Caxias do Sul – RS e estudo <span className="font-extrabold dark:font-semibold">programação e desenvolvimento web</span> pela internet.
           </p>
-          <p className="text-light tracking-[0.4rem] word-spacing-home">
-            Procuro empregos onde poderia mais eficientemente <strong>estender e aprofundar meus conhecimentos e habilidades</strong> na área de desenvolvimento e programação em geral, com profissionais mais experientes e qualificados. Estou <strong>aberto a desafios</strong> e interessado em aprender o que for necessário para progredir profissionalmente e me inserir nesta área de atuação.
+          <p className="home-word-spacing dark:tracking-[0.4rem] dark:font-light">
+            Procuro empregos onde poderia mais eficientemente <span className="font-extrabold dark:font-semibold">estender e aprofundar meus conhecimentos e habilidades</span> na área de desenvolvimento e programação em geral, com profissionais mais experientes e qualificados. Estou <span className="font-extrabold dark:font-semibold">aberto a desafios</span> e interessado em aprender o que for necessário para progredir profissionalmente e me inserir nesta área de atuação.
           </p>
         </section>
         <Image width={280} height={280} className="rounded-full shadow-[15px_15px_15px_0_rgba(0,0,0,0.2)]" src={"/me0.jpg"} alt="" />
       </div>
-      <div className="home-link-list flex flex-row flex-nowrap gap-[20px]">
-        <a className="home-link" target="_blank" href="https://www.linkedin.com/in/augustocdm/">
-          <FaLinkedin />
-          <span>LinkedIn</span>
-        </a>
-        <a className="home-link" target="_blank" href="https://github.com/augustoomoraes">
-          <FaGithub />
-          <span>GitHub</span>
-        </a>
-        <a className="home-link" target="_blank" href="https://www.instagram.com/augustooomoraes/">
-          <FaInstagram />
-          <span>Instagram</span>
-        </a>
+      <div className="home-link-list flex flex-col md:flex-row flex-nowrap gap-[20px]">
+        <div className="home-link-container">
+          <a className="home-link" target="_blank" href="https://www.linkedin.com/in/augustocdm/">
+            <FaLinkedin />
+            <span>LinkedIn</span>
+          </a>
+        </div>
+        <div className="home-link-container">
+          <a className="home-link" target="_blank" href="https://github.com/augustoomoraes">
+            <FaGithub />
+            <span>GitHub</span>
+          </a>
+        </div>
+        <div className="home-link-container">
+          <a className="home-link" target="_blank" href="https://www.instagram.com/augustooomoraes/">
+            <FaInstagram />
+            <span>Instagram</span>
+          </a>
+        </div>
       </div>
     </main>
   );

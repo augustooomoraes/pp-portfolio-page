@@ -33,7 +33,7 @@ export default function Page() {
     <main className={classNames(nunito_sans.className)}>
       <section>
         <h1 className={aleo.className}>Contato</h1>
-        <div className="grid gap-y-[6rem] items-center">
+        <div className="grid gap-y-[6rem] items-center hyphens-manual">
           {/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */}
           <div className="inline-grid grid-cols-[auto_1fr] items-center">
             <a className="pointer-events-none">
@@ -52,7 +52,7 @@ export default function Page() {
               <div className="inline-grid grid-cols-[30rem_auto] items-center">
                 <FaCakeCandles className="justify-self-center" />
                 <span className="pl-[20rem]">
-                  14 de abril <span className="italic font-light">(23 anos)</span>
+                  14 de abril <span className="font-light">(23 anos)</span>
                 </span>
               </div>
             </a>
@@ -84,7 +84,7 @@ export default function Page() {
             <a href="mailto:cdm.augusto@gmail.com">
               <div className="inline-grid grid-cols-[30rem_auto] items-center">
                 <LuMail className="justify-self-center" />
-                <span className="pl-[20rem]">cdm.augusto@gmail.com</span>
+                <span className="pl-[20rem]">cdm.augusto&shy;@gmail.com</span>
               </div>
             </a>
             <div></div>
@@ -104,7 +104,7 @@ export default function Page() {
             <a target="_blank" href="https://www.instagram.com/augustooomoraes/">
               <div className="inline-grid grid-cols-[30rem_auto] items-center">
                 <FaInstagram className="justify-self-center" />
-                <span className="pl-[20rem]">@augustooomoraes</span>
+                <span className="pl-[20rem]">@augustooo&shy;moraes</span>
               </div>
             </a>
             <div></div>
@@ -114,7 +114,7 @@ export default function Page() {
             <a target="_blank" href="https://github.com/augustoomoraes">
               <div className="inline-grid grid-cols-[30rem_auto] items-center">
                 <FaGithub className="justify-self-center" />
-                <span className="pl-[20rem]">augustoomoraes</span>
+                <span className="pl-[20rem]">augustoo&shy;moraes</span>
               </div>
             </a>
             <div></div>
@@ -124,7 +124,7 @@ export default function Page() {
             <a target="_blank" href="https://www.figma.com/@augustomoraes">
               <div className="inline-grid grid-cols-[30rem_auto] items-center">
                 <FaFigma className="justify-self-center" />
-                <span className="pl-[20rem]">@augustomoraes</span>
+                <span className="pl-[20rem]">@augusto&shy;moraes</span>
               </div>
             </a>
             <div></div>
