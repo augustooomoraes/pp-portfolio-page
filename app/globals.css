@@ -130,7 +130,6 @@ html {
 
 body {
   min-height: 100vh;
-  /* min-width: 100vw; */
   font-size: 24rem;
   color: rgb(var(--font-color-primary-rgb));
 
@@ -147,7 +146,6 @@ body {
 }
 
 nav {
-  /* min-width: 300px; */
   max-width: var(--content-max-width);
 }
 
@@ -189,7 +187,6 @@ h4 {
 }
 
 p {
-  /* font-family: var(--font-secondary); */
   font-weight: 400;
   font-size: var(--paragraph-size);
 
@@ -202,7 +199,6 @@ p {
 }
 
 li {
-  /* font-family: var(--font-secondary); */
   font-weight: 400;
   font-size: var(--list-item-size);
 
