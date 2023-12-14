@@ -11,6 +11,13 @@ export const metadata = {
     default: "Augusto Moraes",
   },
   description: "Portfólio e informações sobre este cujo nome a página intitula.",
+  openGraph: {
+    title: "Augusto Moraes",
+    description: "Portfólio e informações sobre este cujo nome a página intitula.",
+    url: "https://www.augustooomoraes.com/",
+    type: "website",
+    image: "https://portfolio-page-nextjs-m13qvegke-augustomoraes.vercel.app/opengraph-image.png?199e65cd9697fbf2",
+  },
 };
 
 export default function RootLayout({ children }) {
