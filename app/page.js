@@ -1,6 +1,16 @@
 import Image from "next/image";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
+export const metadata = {
+  openGraph: {
+    title: "Augusto Moraes",
+    description: "Portfólio e informações sobre este cujo nome a página intitula.",
+    url: "https://www.augustooomoraes.com/",
+    type: "website",
+    image: "https://portfolio-page-nextjs-m13qvegke-augustomoraes.vercel.app/opengraph-image.png?199e65cd9697fbf2",
+  },
+};
+
 export default function Home() {
   return (
     <main>
