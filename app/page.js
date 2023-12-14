@@ -8,7 +8,7 @@ export const metadata = {
     // url: "https://www.augustooomoraes.com/",
     url: "https://staging-augustooomoraes.vercel.app/",
     type: "website",
-    // image: "./opengraph-image.png",
+    image: "https://staging-augustooomoraes.vercel.app/_next/image?url=%2Fopengraph-image.png&w=640&q=75",
   },
 };
 
