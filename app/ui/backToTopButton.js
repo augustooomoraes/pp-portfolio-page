@@ -1,6 +1,7 @@
 "use client";
 
-const { useEffect, useState } = require("react");
+import { useEffect, useState } from "react";
+import { CSSTransition } from "react-transition-group";
 
 import { FaChevronUp } from "react-icons/fa6";
 
@@ -18,14 +19,12 @@ export function BackToTopButton() {
   };
 
   return (
-    <>
-      {BackToTopButton && (
-        <div className="nav-link-list fixed bottom-[30px] right-[30px] w-[40rem] h-[40rem] rounded-[6px]">
-          <button onClick={scrollUp} className="nav-link w-full h-full rounded-[6px] flex justify-center items-center">
-            <FaChevronUp />
-          </button>
-        </div>
-      )}
-    </>
+    <CSSTransition in={BackToTopButton} unmountOnExit timeout={200} classNames="containerOpacity">
+      <div className="bttButtonContainer">
+        <button onClick={scrollUp} className="bttButtonContent">
+          <FaChevronUp />
+        </button>
+      </div>
+    </CSSTransition>
   );
 }

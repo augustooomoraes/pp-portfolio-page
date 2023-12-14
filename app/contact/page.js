@@ -121,10 +121,10 @@ export default function Page() {
           </div>
           {/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */}
           {/* <div className="inline-grid grid-cols-[auto_1fr] items-center">
-            <a target="_blank" href="https://www.figma.com/@augustomoraes">
+            <a target="_blank" href="https://www.figma.com/@augustooomoraes">
               <div className="inline-grid grid-cols-[30rem_auto] items-center">
                 <FaFigma className="justify-self-center" />
-                <span className="pl-[20rem]">@augusto&shy;moraes</span>
+                <span className="pl-[20rem]">@augustooo&shy;moraes</span>
               </div>
             </a>
             <div></div>
