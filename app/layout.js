@@ -14,9 +14,10 @@ export const metadata = {
   openGraph: {
     title: "Augusto Moraes",
     description: "Portfólio e informações sobre este cujo nome a página intitula.",
-    url: "https://www.augustooomoraes.com/",
+    // url: "https://www.augustooomoraes.com/",
+    url: "https://staging-augustooomoraes.vercel.app/",
     type: "website",
-    image: "./opengraph-image.png",
+    // image: "./opengraph-image.png",
   },
 };
 
