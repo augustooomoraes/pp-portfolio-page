@@ -11,6 +11,7 @@ export const metadata = {
     default: "Augusto Moraes",
   },
   description: "Portfólio e informações sobre este cujo nome a página intitula.",
+  metadataBase: new URL("https://www.augustooomoraes.com/"),
   // openGraph: {
   //   title: "Augusto Moraes",
   //   description: "Portfólio e informações sobre este cujo nome a página intitula.",
