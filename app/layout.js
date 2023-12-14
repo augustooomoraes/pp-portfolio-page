@@ -16,7 +16,7 @@ export const metadata = {
     description: "Portfólio e informações sobre este cujo nome a página intitula.",
     url: "https://www.augustooomoraes.com/",
     type: "website",
-    image: "https://portfolio-page-nextjs-m13qvegke-augustomoraes.vercel.app/opengraph-image.png?199e65cd9697fbf2",
+    image: "./opengraph-image.png",
   },
 };
 
