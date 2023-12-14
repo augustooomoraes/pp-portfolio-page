@@ -12,6 +12,7 @@ export const metadata = {
   },
   description: "Portfólio e informações sobre este cujo nome a página intitula.",
   metadataBase: new URL("https://www.augustooomoraes.com/"),
+  openGraph: { image: "https://www.augustooomoraes.com/opengraph-image.png?199e65cd9697fbf2" },
   // openGraph: {
   //   title: "Augusto Moraes",
   //   description: "Portfólio e informações sobre este cujo nome a página intitula.",
