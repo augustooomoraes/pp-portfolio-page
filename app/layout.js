@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { Navbar } from "./ui/navbar";
 import { BackToTopButton } from "./ui/backToTopButton";
@@ -10,17 +11,30 @@ export const metadata = {
     template: "%s - Augusto Moraes",
     default: "Augusto Moraes",
   },
-  description: "Portfólio e informações sobre este cujo nome a página intitula.",
+  description: "Portfólio e informações deste cujo nome a página intitula.",
   metadataBase: new URL("https://www.augustooomoraes.com/"),
-  openGraph: { image: "https://www.augustooomoraes.com/opengraph-image.png?199e65cd9697fbf2" },
-  // openGraph: {
-  //   title: "Augusto Moraes",
-  //   description: "Portfólio e informações sobre este cujo nome a página intitula.",
-  //   url: "https://staging-augustooomoraes.vercel.app/",
-  //   // url: "https://www.augustooomoraes.com/",
-  //   type: "website",
-  //   image: "https://portfolio-page-nextjs-m13qvegke-augustomoraes.vercel.app/opengraph-image.png?199e65cd9697fbf2"
-  // },
+  openGraph: {
+    url: 'https://www.augustooomoraes.com',
+    type: 'website',
+    title: 'Augusto Moraes',
+    description: 'Portfólio e informações deste cujo nome a página intitula.',
+    images: [
+      {
+        url: 'https://www.augustooomoraes.com/opengraph-image.png?199e65cd9697fbf2',
+        width: 800,
+        height: 600,
+        alt: 'Augusto Moraes OpenGraph Image',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    domain: 'augustooomoraes.com',
+    url: 'https://www.augustooomoraes.com',
+    title: 'Augusto Moraes',
+    description: 'Portfólio e informações deste cujo nome a página intitula.',
+    image: 'https://www.augustooomoraes.com/opengraph-image.png?199e65cd9697fbf2',
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -30,6 +44,7 @@ export default function RootLayout({ children }) {
         <BackToTopButton />
         <Navbar />
         {children}
+        <Analytics />
       </body>
     </html>
   );
