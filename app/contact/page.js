@@ -85,10 +85,10 @@ export default function Page() {
           </div>
           {/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */}
           <div className="inline-grid grid-cols-[auto_1fr] items-center">
-            <a target="_blank" href="https://wa.me/5554996166643">
+            <a target="_blank" href="https://wa.me/5554996803005">
               <div className="inline-grid grid-cols-[30rem_auto] items-center">
                 <FaWhatsapp className="justify-self-center" />
-                <span className="pl-[20rem]">+55 (54) 996 166 643</span>
+                <span className="pl-[20rem]">+55 (54) 996 803 005</span>
               </div>
             </a>
             <div></div>
