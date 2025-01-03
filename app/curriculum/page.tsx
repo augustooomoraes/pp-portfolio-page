@@ -153,7 +153,7 @@ export default function Page() {
               <span className="font-light dark:font-extralight"> – Porto Alegre, RS</span>
             </p>
             <p className="text-[26rem] font-bold mt-[-10rem] leading-[30rem]">Programa Nova Geração – trilha de programação</p>
-            <p className="dark:font-light dark:font-extralight">
+            <p className="dark:font-light">
               Cursos de <span className="font-bold dark:font-semibold">Javascript</span>, <span className="font-bold dark:font-semibold">HTML</span>, <span className="font-bold dark:font-semibold">Git</span>, <span className="font-bold dark:font-semibold">Github</span> e <span className="font-bold dark:font-semibold">Java</span> pela Alura Cursos Online de Tecnologia.
             </p>
           </section>
