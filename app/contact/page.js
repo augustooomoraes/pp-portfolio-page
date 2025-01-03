@@ -35,7 +35,7 @@ export default function Page() {
   const now = new Date();
   const birthDate = new Date('2000-04-14');
   
-  const age = now.getFullYear() - birthDate.getFullYear();
+  let age = now.getFullYear() - birthDate.getFullYear();
   const monthDifference = now.getMonth() - birthDate.getMonth();
   const dayDifference = now.getDate() - birthDate.getDate();
   
@@ -66,7 +66,7 @@ export default function Page() {
               <div className="inline-grid grid-cols-[30rem_auto] items-center">
                 <FaCakeCandles className="justify-self-center" />
                 <span className="pl-[20rem]">
-                  14 de abril <span className="font-light">(23 anos)</span>
+                  14 de abril <span className="font-light">({age.toString()} anos)</span>
                 </span>
               </div>
             </a>
