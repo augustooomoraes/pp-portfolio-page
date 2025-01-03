@@ -78,7 +78,7 @@ export default function Page() {
               {/* inactive link */}
               <div className="inline-grid grid-cols-[30rem_auto] items-center">
                 <FaMapMarkerAlt className="justify-self-center" />
-                <span className="pl-[20rem]">Caxias do Sul – RS</span>
+                <span className="pl-[20rem]">São Francisco de Paula – RS</span>
               </div>
             </a>
             <div></div>
