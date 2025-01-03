@@ -85,10 +85,10 @@ export default function Page() {
           </div>
           {/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */}
           <div className="inline-grid grid-cols-[auto_1fr] items-center">
-            <a target="_blank" href="https://wa.me/5554996803005">
+            <a target="_blank" href="https://wa.me/5554996803005" className="">
               <div className="inline-grid grid-cols-[30rem_auto] items-center">
                 <FaWhatsapp className="justify-self-center" />
-                <span className="pl-[20rem]">+55 (54) 996 803 005</span>
+                <span className="pl-[20rem] hover:underline">+55 (54) 996 803 005</span>
               </div>
             </a>
             <div></div>
@@ -98,7 +98,7 @@ export default function Page() {
             <a href="mailto:cdm.augusto@gmail.com">
               <div className="inline-grid grid-cols-[30rem_auto] items-center">
                 <LuMail className="justify-self-center" />
-                <span className="pl-[20rem]">cdm.augusto&shy;@gmail.com</span>
+                <span className="pl-[20rem] hover:underline">cdm.augusto&shy;@gmail.com</span>
               </div>
             </a>
             <div></div>
@@ -108,7 +108,7 @@ export default function Page() {
             <a target="_blank" href="https://www.linkedin.com/in/augustocdm/">
               <div className="inline-grid grid-cols-[30rem_auto] items-center">
                 <FaLinkedin className="justify-self-center" />
-                <span className="pl-[20rem]">in/augustocdm</span>
+                <span className="pl-[20rem] hover:underline">in/augustocdm</span>
               </div>
             </a>
             <div></div>
@@ -118,7 +118,7 @@ export default function Page() {
             <a target="_blank" href="https://www.instagram.com/augustooomoraes/">
               <div className="inline-grid grid-cols-[30rem_auto] items-center">
                 <FaInstagram className="justify-self-center" />
-                <span className="pl-[20rem]">@augustooo&shy;moraes</span>
+                <span className="pl-[20rem] hover:underline">@augustooo&shy;moraes</span>
               </div>
             </a>
             <div></div>
@@ -128,7 +128,7 @@ export default function Page() {
             <a target="_blank" href="https://github.com/augustooomoraes">
               <div className="inline-grid grid-cols-[30rem_auto] items-center">
                 <FaGithub className="justify-self-center" />
-                <span className="pl-[20rem]">augustooo&shy;moraes</span>
+                <span className="pl-[20rem] hover:underline">augustooo&shy;moraes</span>
               </div>
             </a>
             <div></div>
@@ -138,7 +138,7 @@ export default function Page() {
             <a target="_blank" href="https://www.figma.com/@augustooomoraes">
               <div className="inline-grid grid-cols-[30rem_auto] items-center">
                 <FaFigma className="justify-self-center" />
-                <span className="pl-[20rem]">@augustooo&shy;moraes</span>
+                <span className="pl-[20rem] hover:underline">@augustooo&shy;moraes</span>
               </div>
             </a>
             <div></div>
