@@ -6,20 +6,22 @@ import { CSSTransition } from "react-transition-group";
 import { FaChevronUp } from "react-icons/fa6";
 
 export function BackToTopButton() {
-  const [BackToTopButton, setBackToTopButton] = useState(false);
+  const [showBackToTopButton, setShowBackToTopButton] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      window.scrollY > 100 ? setBackToTopButton(true) : setBackToTopButton(false);
-    });
-  });
+    const handleScroll = () => {
+      window.scrollY > 100 ? setShowBackToTopButton(true) : setShowBackToTopButton(false);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollUp = () => {
     window.scrollTo({ top: 0 });
   };
 
   return (
-    <CSSTransition in={BackToTopButton} unmountOnExit timeout={200} classNames="containerOpacity">
+    <CSSTransition in={showBackToTopButton} unmountOnExit timeout={200} classNames="containerOpacity">
       <div className="bttButtonContainer">
         <button onClick={scrollUp} className="bttButtonContent">
           <FaChevronUp />
