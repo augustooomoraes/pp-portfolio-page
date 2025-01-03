@@ -18,6 +18,8 @@ import { FaGithub } from "react-icons/fa6";
 // import { FaCodepen } from "react-icons/fa6";
 import { FaFigma } from "react-icons/fa6";
 
+
+
 import { Nunito_Sans } from "next/font/google";
 import { Aleo } from "next/font/google";
 import classNames from "classnames";
@@ -29,6 +31,18 @@ export const metadata = {
 };
 
 export default function Page() {
+
+  const now = new Date();
+  const birthDate = new Date('2000-04-14');
+  
+  const age = now.getFullYear() - birthDate.getFullYear();
+  const monthDifference = now.getMonth() - birthDate.getMonth();
+  const dayDifference = now.getDate() - birthDate.getDate();
+  
+  if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
+    age--;
+  }
+
   return (
     <main className={classNames(nunito_sans.className)}>
       <section>
