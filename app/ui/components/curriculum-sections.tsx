@@ -22,10 +22,26 @@ type LanguageItemType = {
   info?: string,
 }
 
+type ExperienceItemType = {
+  interval: string,
+  place: string,
+  role: string,
+  items: JSX.Element[],
+}
+
+type CourseItemType = {
+  interval: string,
+  place: string,
+  location: string,
+  discipline: string,
+  paragraph?: JSX.Element,
+  items?: string[],
+}
+
 // =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= //
 // =x=x=x=x=x=x=x=x=x=x=  components //
 
-export function SectionTitle( {title} : {title: string}) {
+export function SectionTitle( {title} : {title: string} ) {
   return (
     <div className="grid grid-cols-[auto_1fr] items-center">
       <h2 className={aleo.className}>{title}</h2>
@@ -36,9 +52,9 @@ export function SectionTitle( {title} : {title: string}) {
   )
 }
 
-export function Divisor() {
+export function Divisor( {mb} : {mb?: string} ) {
   return (
-    <hr className="my-[10rem] max-w-[320rem] opacity-30 border-black light:border dark:border-white" />
+    <hr className={`${ mb ? "mb-[" + mb + "rem]" : "my-[10rem]" } max-w-[320rem] opacity-30 border-black light:border dark:border-white`} />
   )
 }
 
@@ -65,7 +81,7 @@ export function HabilitiesSection( items: string[] ) {
   )
 }
 
-export function LanguagesSection(itemData: LanguageItemType) {
+export function LanguagesSection( itemData: LanguageItemType ) {
 
   const { lang, level, info } = itemData;
 
@@ -76,6 +92,61 @@ export function LanguagesSection(itemData: LanguageItemType) {
       </p>
       { info && <p className="mt-[-10rem] italic font-light dark:font-extralight text-[18rem]">{info}</p>}
     </>
+  )
+}
+
+export function ExperienceSection( itemData: ExperienceItemType ) {
+
+  const { interval, place, role, items } = itemData;
+
+  return (
+    <div className="mb-[18rem]">
+      <p className="text-[18rem] font-light dark:font-extralight">{interval}</p>
+      <p className="text-[22rem] font-normal mt-[-20rem]">{place}</p>
+      <p className="text-[26rem] font-bold mt-[-12rem]">{role}</p>
+      <ul className="list-inside list-disc mt-[-8rem]">
+        {
+          items.map( (item, index) => {
+            return (
+              <li key={index} className="dark:font-light">{item}</li>
+            )
+          })
+        }
+      </ul>
+    </div>
+  )
+}
+
+export function CoursesSection( itemData: CourseItemType ) {
+
+  const { interval, place, location, discipline, paragraph, items } = itemData;
+
+  return (
+    <section className="mb-[18rem]">
+      <p className="text-[18rem] font-light dark:font-extralight">{interval}</p>
+      <p className="text-[22rem] font-normal mt-[-20rem]">
+        <span className="font-bold dark:font-semibold">{place}</span>
+        {" – "}
+        <span className="font-light dark:font-extralight">{location}</span>
+      </p>
+      <p className="text-[26rem] font-bold mt-[-10rem] leading-[30rem]">{discipline}</p>
+      {
+        paragraph && 
+        <p className="dark:font-light">{paragraph}</p>
+      }
+      {
+        items &&
+        <ul className="list-inside list-disc mt-[-8rem]">
+          {
+            items.map( (item, index) => {
+              return (
+                <li key={index} className="dark:font-light">{item}</li>
+              )
+            })
+          }
+        </ul>
+      }
+    </section>
   )
 }
 
@@ -120,5 +191,64 @@ export const languageItems: LanguageItemType[] = [
     lang: "Inglês",
     level: "avançado",
     info: "College Yes Cultural (2013–2018)",
+  },
+]
+
+export const experienceItems: ExperienceItemType[] = [
+  {
+    interval: "jan.2016 – atualmente",
+    place: "Autônomo",
+    role: "Freelancer",
+    items: [
+      <span>Manutenção de dados do sistema interno de produção e gestão;</span>,
+      <span>Desenvolvimento de tabelas de preço por <span className="font-bold dark:font-semibold">Excel</span>;</span>,
+      <span>Elaboração de fichas técnicas de produtos com <span className="font-bold dark:font-semibold">Photoshop</span>, <span className="font-bold dark:font-semibold">Illustrator</span> e <span className="font-bold dark:font-semibold">InDesign</span>;</span>,
+      <span>Produção de modelos tridimensionais de produtos com <span className="font-bold dark:font-semibold">Blender</span>;</span>,
+      <span>Tratamento e relacionamento de dados, elaboração de relatórios e dashboards com <span className="font-bold dark:font-semibold">Power BI Desktop</span> e <span className="font-bold dark:font-semibold">Power BI Report Builder</span>;</span>,        
+      <span>Automação de envios de relatórios por e-mail com <span className="font-bold dark:font-semibold">Power Automate</span>, <span className="font-bold dark:font-semibold">Outlook</span> e <span className="font-bold dark:font-semibold">OneDrive</span>.</span>,
+    ],
+  },
+  {
+    interval: "jan.2016 – atualmente",
+    place: "Autônomo",
+    role: "Freelancer",
+    items: [
+      <span>Produção de <span className="font-bold dark:font-semibold">estampas</span> para roupas e acessórios e de <span className="font-bold dark:font-semibold">materiais de divulgação</span>;</span>,
+      <span>Produção de <span className="font-bold dark:font-semibold">logotipos</span> e edição de <span className="font-bold dark:font-semibold">fotografias e imagens</span> de produtos para catálogos virtuais;</span>,
+      <span>Edição de <span className="font-bold dark:font-semibold">vídeo</span> para aulas virtuais;</span>,
+      <span>Elaboração de projetos para <span className="font-bold dark:font-semibold">móveis e decoração</span>.</span>,
+    ],
+  },
+]
+
+export const coursesItems: CourseItemType[] = [
+  {
+    interval: "mai.2023 – jul.2023",
+    place: "Instituto Caldeira",
+    location: "Porto Alegre, RS",
+    discipline: "Programa Nova Geração – trilha de programação",
+    paragraph: <span>Cursos de <span className="font-bold dark:font-semibold">Javascript</span>, <span className="font-bold dark:font-semibold">HTML</span>, <span className="font-bold dark:font-semibold">Git</span>, <span className="font-bold dark:font-semibold">Github</span> e <span className="font-bold dark:font-semibold">Java</span> pela Alura Cursos Online de Tecnologia.</span>,
+  },
+  {
+    interval: "jan.2022 – dez.2023",
+    place: "freeCodeCamp",
+    location: "remoto",
+    discipline: "Cursos de programação",
+    items: [
+      "Responsive Web Design;",
+      "Javascript Algorithms and Data Structures;",
+      "Relational Databases.",
+    ],
+  },
+  {
+    interval: "jan.2023",
+    place: "DataCamp",
+    location: "remoto",
+    discipline: "Cursos de ciências de dados",
+    items: [
+      "Understanding Data Engineering;",
+      "Understanding Data Science;",
+      "Introduction to Python.",
+    ],
   },
 ]
