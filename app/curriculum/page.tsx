@@ -61,7 +61,7 @@ export default function Page() {
             experienceItems.map( (item, index) => {
               return (
                 <>
-                  {index !== 0 && <Divisor />}
+                  {index !== 0 && <Divisor mb="18" />}
                   {ExperienceSection(item)}
                 </>
               )
