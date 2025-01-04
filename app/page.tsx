@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+import SocialButton, { links } from "./ui/components/social-button";
 
 export default function Home() {
   return (
@@ -17,24 +18,7 @@ export default function Home() {
         <Image width={280} height={280} className="rounded-full shadow-[15px_15px_15px_0_rgba(0,0,0,0.2)]" src={"/me0.jpg"} alt="" />
       </div>
       <div className="home-link-list flex flex-col md:flex-row flex-nowrap gap-[20px]">
-        <div className="home-link-container">
-          <a className="home-link" target="_blank" href="https://www.linkedin.com/in/augustocdm/">
-            <FaLinkedin />
-            <span>LinkedIn</span>
-          </a>
-        </div>
-        <div className="home-link-container">
-          <a className="home-link" target="_blank" href="https://github.com/augustooomoraes">
-            <FaGithub />
-            <span>GitHub</span>
-          </a>
-        </div>
-        <div className="home-link-container">
-          <a className="home-link" target="_blank" href="https://www.instagram.com/augustooomoraes/">
-            <FaInstagram />
-            <span>Instagram</span>
-          </a>
-        </div>
+        { links.map( link => { return SocialButton(link) } ) }
       </div>
     </main>
   );
