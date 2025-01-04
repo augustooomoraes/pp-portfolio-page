@@ -9,6 +9,7 @@ import { IoClose } from "react-icons/io5";
 
 import { Nunito_Sans } from "next/font/google";
 import { useState } from "react";
+import { ThemeToggle } from "./components/themeToggle/theme-toggle";
 const nunito_sans = Nunito_Sans({ subsets: ["latin"] });
 
 export function Navbar() {
@@ -33,6 +34,7 @@ export function Navbar() {
           <Link href="/contact">Contato</Link>
           <Link href="/design">Design</Link>
           <Link href="/web">Web</Link>
+          <ThemeToggle />
         </menu>
         {isOpenDdMenu ? <IoClose onClick={handleClick} className="md:hidden cursor-pointer" /> : <IoMenu onClick={handleClick} className="md:hidden cursor-pointer" />}
         <CSSTransition in={isOpenDdMenu} unmountOnExit timeout={200} classNames="containerOpacity">
@@ -49,6 +51,7 @@ export function Navbar() {
             <Link href="/web" onClick={handleClick}>
               <div className="nav-link">Web</div>
             </Link>
+            {/* <ThemeToggle /> */}
           </menu>
         </CSSTransition>
       </nav>

@@ -4,6 +4,7 @@ import { Navbar } from "./ui/navbar";
 import { BackToTopButton } from "./ui/backToTopButton";
 
 import { Aleo } from "next/font/google";
+import { ThemeProvider } from "./ui/components/themeToggle/theme-provider";
 const aleo = Aleo({ subsets: ["latin"] });
 
 export const metadata = {
@@ -41,10 +42,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
       <body className={aleo.className}>
-        <BackToTopButton />
-        <Navbar />
-        {children}
-        <Analytics />
+        <ThemeProvider>
+          <BackToTopButton />
+          <Navbar />
+          {children}
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );
