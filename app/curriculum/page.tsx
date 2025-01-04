@@ -2,6 +2,7 @@ import classNames from "classnames";
 
 import { Nunito_Sans } from "next/font/google";
 import { Aleo } from "next/font/google";
+import { Divisor, educationItems, EducationSection, HabilitiesSection, habilityItems, languageItems, LanguagesSection, SectionTitle } from "../ui/components/curriculum-sections";
 const nunito_sans = Nunito_Sans({ subsets: ["latin"] });
 const aleo = Aleo({ subsets: ["latin"] });
 
@@ -15,68 +16,42 @@ export default function Page() {
       {/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */}
       {/* Primeira coluna */}
       <div>
-        {/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */}
+
         <article className="mb-[70rem]">
-          <div className="grid grid-cols-[auto_1fr] items-center">
-            <h2 className={aleo.className}>Educação</h2>
-            <svg className="mb-h2 pl-[20rem] h-[3rem] w-full">
-              <rect className="w-full h-full opacity-50 dark:fill-white"></rect>
-            </svg>
-          </div>
-          {/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */}
-          <section className="mb-[36rem]">
-            <h4 className={classNames(aleo.className, "mb-0")}>Design</h4>
-            <p className="font-light dark:font-extralight text-[18rem] leading-[22rem]">
-              jan.2018 – dez.2018 <span className="italic">(incompleto)</span>
-            </p>
-            <p className="mt-[-16rem] mb-[-20rem] font-medium">Universidade de Caxias do Sul</p>
-          </section>
-          {/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */}
-          <hr className="my-[10rem] max-w-[320rem] opacity-30 border-black light:border dark:border-white"></hr>
-          <section className="mb-[36rem]">
-            <h4 className={classNames(aleo.className, "mb-0")}>Criação Digital</h4>
-            <p className="font-light dark:font-extralight text-[18rem] leading-[22rem]">
-              jul.2019 – dez.2020 <span className="italic">(incompleto)</span>
-            </p>
-            <p className="mt-[-16rem] mb-[-20rem] font-medium">Universidade de Caxias do Sul</p>
-          </section>
-          {/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */}
+          <SectionTitle title="Educação" />
+          {
+            educationItems.map( (item, index) => {
+              return (
+                <>
+                  {index !== 0 && <Divisor />}
+                  {EducationSection(item)}
+                </>
+              )
+            })
+          }
         </article>
-        {/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */}
+
         <article className="mb-[36rem]">
-          <div className="grid grid-cols-[auto_1fr] items-center">
-            <h2 className={aleo.className}>Habilidades</h2>
-            <svg className="mb-h2 pl-[20rem] h-[3rem] w-full">
-              <rect className="w-full h-full opacity-50 dark:fill-white"></rect>
-            </svg>
-          </div>
+          <SectionTitle title="Habilidades" />
           <ul className="list-inside list-disc ">
-            <li className="dark:font-light text-[21rem]">Excel, Power BI, Report Builder</li>
-            <li className="dark:font-light text-[21rem]">Power Automate</li>
-            <hr className="my-[10rem] max-w-[320rem] opacity-30 border-black light:border dark:border-white"></hr>
-            <li className="dark:font-light text-[21rem]">Photoshop, Illustrator, InDesign</li>
-            <li className="dark:font-light text-[21rem]">Blender</li>
-            <hr className="my-[10rem] max-w-[320rem] opacity-30 border-black light:border dark:border-white"></hr>
-            <li className="dark:font-light text-[21rem]">React, Next.js</li>
-            <li className="dark:font-light text-[21rem]">Tailwind CSS</li>
-            <li className="dark:font-light text-[21rem]">GitHub</li>
+            {
+              habilityItems.map( (item, index) => {
+                return (
+                  <>
+                    {index !== 0 && <Divisor />}
+                    {HabilitiesSection(item)}
+                  </>
+                )
+              })
+            }
           </ul>
         </article>
-        {/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */}
+
         <article className="mb-[36rem]">
-          <div className="grid grid-cols-[auto_1fr] items-center">
-            <h2 className={aleo.className}>Idiomas</h2>
-            <svg className="mb-h2 pl-[20rem] h-[3rem] w-full">
-              <rect className="w-full h-full opacity-50 dark:fill-white"></rect>
-            </svg>
-          </div>
-          <p className="text-[21rem] font-medium dark:font-normal leading-[20rem]">
-            Português <span className="italic font-light">(nativo)</span>
-          </p>
-          <p className="text-[21rem] font-medium dark:font-normal leading-[20rem]">
-            Inglês <span className="italic font-light">(avançado)</span>
-          </p>
-          <p className="mt-[-10rem] italic font-light dark:font-extralight text-[18rem]">College Yes Cultural (2013–2018)</p>
+          <SectionTitle title="Idiomas" />
+          {
+            languageItems.map( item => LanguagesSection(item))
+          }
         </article>
       </div>
       {/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */}
