@@ -1,29 +1,20 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CSSTransition } from "react-transition-group";
-
 import { FaChevronUp } from "react-icons/fa6";
 
 export function BackToTopButton() {
-  const [showBackToTopButton, setShowBackToTopButton] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
-
-    const handleScroll = () => {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => {
-        setShowBackToTopButton(window.scrollY > 100);
-      }, 100);
+    const onScroll = () => {
+      setVisible(document.documentElement.scrollTop >= 100);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    onScroll();
+    document.addEventListener("scroll", onScroll);
 
-    return () => {
-      clearTimeout(timeout);
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => document.removeEventListener("scroll", onScroll);
   }, []);
 
   const scrollUp = () => {
@@ -31,21 +22,24 @@ export function BackToTopButton() {
   };
 
   return (
-    <CSSTransition in={showBackToTopButton} unmountOnExit timeout={200} classNames="containerOpacity">
-      <div className="
+    <>
+      <div className={`
         bg-surface-secondary shadow-md
         fixed bottom-[30rem] right-[30rem]
         w-[40rem] h-[40rem] rounded-[3.75rem]
-      ">
-        <button onClick={scrollUp} className="
+        transition-opacity duration-longer
+        ${visible ? "opacity-100" : "opacity-0"}
+      `}>
+        <button onClick={visible ? scrollUp : undefined} className={`
+          ${visible ? "cursor-pointer" : "cursor-default"}
           flex justify-center items-center
           w-full h-full rounded-[3.75rem]
           transition-colors
           hover:bg-surface-hover dark:hover:bg-surface-hoverDark
-        ">
+        `}>
           <FaChevronUp />
         </button>
       </div>
-    </CSSTransition>
+    </>
   );
 }

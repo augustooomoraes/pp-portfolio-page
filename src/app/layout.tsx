@@ -51,7 +51,7 @@ export default function RootLayout({
         enableSystem
       >
         <body className={`${aleo.className} text-text-primary bg-surface-primary antialiased`}>
-          {/* <BackToTopButton /> */}
+          <BackToTopButton />
           <Navbar />
           {children}
           <Analytics />

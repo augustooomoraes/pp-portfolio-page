@@ -209,26 +209,5 @@ li {
   word-spacing: 0.4rem;
 }
 
-/* =x CSSTransform (react-transition-group)
-=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x */
-
-.containerOpacity-enter {
-  opacity: 0;
-}
-
-.containerOpacity-enter-active {
-  transition: opacity calc(var(--transition-duration) / 2);
-  opacity: 1;
-}
-
-.containerOpacity-exit {
-  opacity: 1;
-}
-
-.containerOpacity-exit-active {
-  transition: opacity calc(var(--transition-duration) / 2);
-  opacity: 0;
-}
-
 /* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */
 /* x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x */
