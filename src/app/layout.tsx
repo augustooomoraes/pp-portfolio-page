@@ -38,17 +38,25 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="pt-BR">
-      <body className={aleo.className}>
-        <ThemeProvider>
-          <BackToTopButton />
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+      >
+        <body className={`${aleo.className} text-text-primary bg-surface-primary antialiased`}>
+          {/* <BackToTopButton /> */}
           <Navbar />
           {children}
           <Analytics />
-        </ThemeProvider>
-      </body>
+        </body>
+      </ThemeProvider>
     </html>
   );
 }

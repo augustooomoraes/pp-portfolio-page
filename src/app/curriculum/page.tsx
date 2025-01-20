@@ -20,8 +20,8 @@ export default function Page() {
             educationItems.map( (item, index) => {
               return (
                 <>
-                  {index !== 0 && <Divisor />}
-                  {EducationSection(item)}
+                  {index !== 0 && <Divisor index={index} />}
+                  {EducationSection(index, item)}
                 </>
               )
             })
@@ -35,7 +35,7 @@ export default function Page() {
               habilityItems.map( (item, index) => {
                 return (
                   <>
-                    {index !== 0 && <Divisor />}
+                    {index !== 0 && <Divisor index={index} />}
                     {HabilitiesSection(item)}
                   </>
                 )
@@ -47,7 +47,7 @@ export default function Page() {
         <article className="mb-[36rem]">
           <SectionTitle title="Idiomas" />
           {
-            languageItems.map( item => LanguagesSection(item))
+            languageItems.map( (item, index) => LanguagesSection(index, item))
           }
         </article>
 
@@ -61,8 +61,8 @@ export default function Page() {
             experienceItems.map( (item, index) => {
               return (
                 <>
-                  {index !== 0 && <Divisor mb="18" />}
-                  {ExperienceSection(item)}
+                  {index !== 0 && <Divisor index={index} mb="18" />}
+                  {ExperienceSection(index, item)}
                 </>
               )
             })
@@ -75,8 +75,8 @@ export default function Page() {
             coursesItems.map( (item, index) => {
               return (
                 <>
-                  {index !== 0 && <Divisor mb="18"/>}
-                  {CoursesSection(item)}
+                  {index !== 0 && <Divisor index={index} mb="18"/>}
+                  {CoursesSection(index, item)}
                 </>
               )
             })

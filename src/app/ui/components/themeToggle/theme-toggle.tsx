@@ -12,14 +12,22 @@ export function ThemeToggle() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
-
   return (
     <div
       className="flex items-center px-[8rem] rounded-[3.75rem] hover:bg-surface-hover hover:cursor-pointer"
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      onClick={
+        mounted
+          ? () => setTheme(theme === 'dark' ? 'light' : 'dark')
+          : undefined
+      }
     >
-      {theme === 'dark' ? <FaRegSun className="w-[15rem]"/> : <FaRegMoon className="w-[15rem]"/>}
+      {
+        mounted
+          ? theme === "dark"
+            ? <FaRegSun className="w-[15rem]"/>
+            : <FaRegMoon className="w-[15rem]"/>
+          : <></>
+      }
     </div>
   )
 }

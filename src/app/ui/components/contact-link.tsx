@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { IconType } from "react-icons";
 import { FaGithub, FaInstagram, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
 import { FaCakeCandles, FaFigma, FaWhatsapp } from "react-icons/fa6";
@@ -20,13 +21,17 @@ export default function ContactLink(buttonData: ButtonType) {
   if ( active === undefined ) parsedActive = true;
 
   return (
-    <div className="inline-grid grid-cols-[auto_1fr] items-center">
+    <div className="inline-grid grid-cols-[auto_1fr] items-center" key={url}>
       <a
-        className={!parsedActive && "pointer-events-none"}
-        target={parsedActive && "_blank"}
-        href={parsedActive && parsedUrl}
+        className={!parsedActive ? "pointer-events-none" : undefined}
+        target={parsedActive ? "_blank" : undefined}
+        href={parsedActive ? parsedUrl : undefined}
       >
-        <div className="inline-grid grid-cols-[30rem_auto] items-center">
+        <div className="
+          inline-grid grid-cols-[30rem_auto]
+          items-center
+          text-text-primary dark:text-text-primaryDark
+        ">
           <Icon className="justify-self-center" />
           <span className={`pl-[20rem] ${parsedActive && "hover:underline"}`}>{title}</span>
         </div>
