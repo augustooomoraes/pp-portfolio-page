@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import classNames from "classnames";
-import { CSSTransition } from "react-transition-group";
 
 import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
@@ -54,27 +53,28 @@ export function Navbar() {
           <ThemeToggle />
         </menu>
 
-        {
-          isOpenDdMenu
-          ? <IoClose onClick={handleClick} className="md:hidden cursor-pointer" />
-          : <IoMenu onClick={handleClick} className="md:hidden cursor-pointer" />
-        }
+        <div className="flex flex-row gap-[10rem] md:hidden">
+          <ThemeToggle />
+          {
+            isOpenDdMenu
+            ? <IoClose onClick={handleClick} className="md:hidden cursor-pointer" />
+            : <IoMenu onClick={handleClick} className="cursor-pointer" />
+          }
+        </div>
 
-        <CSSTransition in={isOpenDdMenu} unmountOnExit timeout={200} classNames="containerOpacity">
-          <menu className={classNames(
-            nunito_sans.className,
-            "md:hidden",
-            "flex flex-col items-end gap-[4px]",
-            "absolute top-[80px] right-[40px]",
-            "p-[4px] rounded-[6px]",
-            "bg-surface-secondary shadow-lg",
-            "text-right",
-            "overflow-hidden",
-          )}>
-            { links.map( (link, index) => NavLink(index, link, handleClick, true) ) }
-            {/* <ThemeToggle /> */}
-          </menu>
-        </CSSTransition>
+        <menu className={classNames(
+          nunito_sans.className,
+          "md:hidden",
+          "flex flex-col items-end gap-[4px]",
+          "absolute top-[80px] right-[40px]",
+          isOpenDdMenu ? "p-[4px] rounded-[6px]" : "p-0 rounded-none",
+          "bg-surface-secondary shadow-lg",
+          "text-right",
+          "overflow-hidden",
+          isOpenDdMenu ? "opacity-100" : "opacity-0",
+        )}>
+          { links.map( (link, index) => NavLink(index, link, handleClick, true, isOpenDdMenu) ) }
+        </menu>
       </nav>
     </header>
   );
@@ -85,23 +85,26 @@ function NavLink(
   link: LinkType,
   func: () => void,
   dropdown = false,
+  visible = true,
 ) {
   if (dropdown) {
     return (
-      <Link
-        key={index}
-        href={link.url}
-        onClick={func}
-      >
-        <div className="
-          w-[120px] py-[1px] pr-[8px]
-          transition-colors duration-longer
-          hover:bg-surface-hover dark:hover:bg-surface-hoverDark
-          text-text-primary dark:text-text-primaryDark
-        ">
-          {link.title}
-        </div>
-      </Link>
+      visible
+        ? <Link
+          key={index}
+          href={link.url}
+          onClick={func}
+        >
+          <div className="
+            w-[120px] py-[1px] pr-[8px]
+            transition-colors duration-longer
+            hover:bg-surface-hover dark:hover:bg-surface-hoverDark
+            text-text-primary dark:text-text-primaryDark
+          ">
+            {link.title}
+          </div>
+        </Link>
+      : null
     )
   } else {
     return <Link
