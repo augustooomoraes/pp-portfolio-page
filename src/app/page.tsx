@@ -19,7 +19,7 @@ export default function Home() {
           width={280}
           height={280}
           className="rounded-full shadow-2xl"
-          src={"/me0.jpg"}
+          src={"/me2edit.jpg"}
           alt=""
         />
       </div>
