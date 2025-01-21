@@ -10,11 +10,11 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <main className={classNames(nunito_sans.className, "grid grid-cols-[1fr] lg:grid-cols-[400px_1fr] lg:gap-x-[20px]")}>
+    <main className={classNames(nunito_sans.className, "grid grid-cols-[1fr] lg:grid-cols-[400px_1fr] lg:gap-x-5")}>
 
       <div> {/* Primeira coluna */}
 
-        <article className="mb-[70rem]">
+        <article className="mb-16">
           <SectionTitle title="Educação" />
           {
             educationItems.map( (item, index) => {
@@ -28,7 +28,7 @@ export default function Page() {
           }
         </article>
 
-        <article className="mb-[36rem]">
+        <article className="mb-9">
           <SectionTitle title="Habilidades" />
           <ul className="list-inside list-disc ">
             {
@@ -44,7 +44,7 @@ export default function Page() {
           </ul>
         </article>
 
-        <article className="mb-[36rem]">
+        <article className="mb-9">
           <SectionTitle title="Idiomas" />
           {
             languageItems.map( (item, index) => LanguagesSection(index, item))
@@ -55,13 +55,13 @@ export default function Page() {
 
       <div> {/* segunda coluna */}
 
-        <article className="mb-[36rem]">
+        <article className="mb-9">
           <SectionTitle title="Experiência" />
           {
             experienceItems.map( (item, index) => {
               return (
                 <>
-                  {index !== 0 && <Divisor index={index} mb="18" />}
+                  {index !== 0 && <Divisor index={index} mb="4.5" />}
                   {ExperienceSection(index, item)}
                 </>
               )
@@ -69,13 +69,13 @@ export default function Page() {
           }
         </article>
 
-        <article className="mb-[36rem]">
+        <article className="mb-9">
           <SectionTitle title="Cursos" />
           {
             coursesItems.map( (item, index) => {
               return (
                 <>
-                  {index !== 0 && <Divisor index={index} mb="18"/>}
+                  {index !== 0 && <Divisor index={index} mb="4.5"/>}
                   {CoursesSection(index, item)}
                 </>
               )

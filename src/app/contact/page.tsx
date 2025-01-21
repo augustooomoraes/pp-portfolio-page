@@ -15,7 +15,7 @@ export default function Page() {
     <main className={classNames(nunito_sans.className)}>
       <section>
         <h1 className={aleo.className}>Contato</h1>
-        <div className="grid gap-y-[6rem] items-center hyphens-manual">
+        <div className="grid gap-y-2 items-center hyphens-manual">
           { links.map( link => { return ContactLink(link)})}
         </div>
       </section>

@@ -25,15 +25,15 @@ export function BackToTopButton() {
     <>
       <div className={`
         bg-surface-secondary shadow-md
-        fixed bottom-[30rem] right-[30rem]
-        w-[40rem] h-[40rem] rounded-[3.75rem]
+        fixed bottom-7 right-7
+        w-10 h-10 rounded-almostMedium
         transition-opacity duration-longer
         ${visible ? "opacity-100" : "opacity-0"}
       `}>
         <button onClick={visible ? scrollUp : undefined} className={`
           ${visible ? "cursor-pointer" : "cursor-default"}
           flex justify-center items-center
-          w-full h-full rounded-[3.75rem]
+          w-full h-full rounded-almostMedium
           transition-colors
           hover:bg-surface-hover dark:hover:bg-surface-hoverDark
         `}>

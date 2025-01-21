@@ -41,7 +41,7 @@ export function SectionTitle( {title} : {title: string} ) {
   return (
     <div className="grid grid-cols-[auto_1fr] items-center">
       <h2 className={aleo.className}>{title}</h2>
-      <svg className="mb-h2 pl-[20rem] h-[3rem] w-full">
+      <svg className="mb-h2 pl-5 h-0.75 w-full">
         <rect className="w-full h-full opacity-50 text-inherit bg-inherit fill-text-primary dark:fill-text-primaryDark"></rect>
       </svg>
     </div>
@@ -56,7 +56,7 @@ export function Divisor({
   mb?: string,
 } ) {
   return (
-    <hr key={index} className={`${ mb ? "mb-[" + mb + "rem]" : "my-[10rem]" } max-w-[320rem] opacity-30 border-black dark:border-white`} />
+    <hr key={index} className={`${ mb ? "mb-" + mb : "my-2.5" } max-w-[320px] opacity-30 border-black dark:border-white`} />
   )
 }
 
@@ -65,12 +65,12 @@ export function EducationSection( index: number, itemData: EducationItemType ) {
   const { timeInterval, title, place } = itemData;
 
   return (
-    <section className="mb-[36rem]" key={index}>
+    <section className="mb-9" key={index}>
       <h4 className={classNames(aleo.className, "mb-0")}>{title}</h4>
-      <p className="font-light dark:font-extralight text-[18rem] leading-[22rem]">
+      <p className="font-light dark:font-extralight text-lg leading-6">
         {timeInterval}
       </p>
-      <p className="mt-[-16rem] mb-[-20rem] font-medium">{place}</p>
+      <p className="-mt-4 -mb-5 font-medium">{place}</p>
     </section>
   )
 }
@@ -78,7 +78,7 @@ export function EducationSection( index: number, itemData: EducationItemType ) {
 export function HabilitiesSection( items: string[] ) {
   return (
     items.map( (item, index) => { return (
-      <li key={index} className="dark:font-light text-[21rem]">{item}</li>
+      <li key={index} className="dark:font-light text-1.2xl">{item}</li>
     )})
   )
 }
@@ -89,10 +89,10 @@ export function LanguagesSection( index: number, itemData: LanguageItemType ) {
 
   return (
     <div key={index}>
-      <p className="text-[21rem] font-medium dark:font-normal leading-[20rem]">
+      <p className="text-1.2xl font-medium dark:font-normal leading-8">
         {lang} <span className="italic font-light">({level})</span>
       </p>
-      { info && <p className="mt-[-10rem] italic font-light dark:font-extralight text-[18rem]">{info}</p>}
+      { info && <p className="-mt-2.5 italic font-light dark:font-extralight text-lg leading-3">{info}</p>}
     </div>
   )
 }
@@ -102,11 +102,11 @@ export function ExperienceSection( index: number, itemData: ExperienceItemType )
   const { interval, place, role, items } = itemData;
 
   return (
-    <div key={index} className="mb-[18rem]">
-      <p className="text-[18rem] font-light dark:font-extralight">{interval}</p>
-      <p className="text-[22rem] font-normal mt-[-20rem]">{place}</p>
-      <p className="text-[26rem] font-bold mt-[-12rem]">{role}</p>
-      <ul className="list-inside list-disc mt-[-8rem]">
+    <div key={index} className="mb-4.5">
+      <p className="text-lg font-light dark:font-extralight">{interval}</p>
+      <p className="text-1.5xl font-normal -mt-5">{place}</p>
+      <p className="text-2.2xl font-bold -mt-3">{role}</p>
+      <ul className="list-inside list-disc -mt-2">
         {
           items.map( (item, index) => {
             return (
@@ -124,21 +124,21 @@ export function CoursesSection( index: number, itemData: CourseItemType ) {
   const { interval, place, location, discipline, paragraph, items } = itemData;
 
   return (
-    <section className="mb-[18rem]" key={index}>
-      <p className="text-[18rem] font-light dark:font-extralight">{interval}</p>
-      <p className="text-[22rem] font-normal mt-[-20rem]">
+    <section className="mb-4.5" key={index}>
+      <p className="text-lg font-light dark:font-extralight">{interval}</p>
+      <p className="text-1.5xl font-normal -mt-5">
         <span className="font-bold dark:font-semibold">{place}</span>
         {" – "}
         <span className="font-light dark:font-extralight">{location}</span>
       </p>
-      <p className="text-[26rem] font-bold mt-[-10rem] leading-[30rem]">{discipline}</p>
+      <p className="text-2.2xl font-bold -mt-2.5 leading-7.5">{discipline}</p>
       {
         paragraph && 
         <p className="dark:font-light">{paragraph}</p>
       }
       {
         items &&
-        <ul className="list-inside list-disc mt-[-8rem]">
+        <ul className="list-inside list-disc -mt-2">
           {
             items.map( (item, index) => {
               return (

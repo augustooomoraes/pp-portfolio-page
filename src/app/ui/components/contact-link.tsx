@@ -28,12 +28,13 @@ export default function ContactLink(buttonData: ButtonType) {
         href={parsedActive ? parsedUrl : undefined}
       >
         <div className="
-          inline-grid grid-cols-[30rem_auto]
+          inline-grid grid-cols-[30px_auto]
           items-center
           text-text-primary dark:text-text-primaryDark
+          text-1.5xl
         ">
           <Icon className="justify-self-center" />
-          <span className={`pl-[20rem] ${parsedActive && "hover:underline"}`}>{title}</span>
+          <span className={`pl-5 ${parsedActive && "hover:underline"}`}>{title}</span>
         </div>
       </a>
       <div></div>

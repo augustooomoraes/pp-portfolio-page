@@ -14,7 +14,7 @@ export function ThemeToggle() {
 
   return (
     <div
-      className="flex items-center px-[8rem] rounded-[3.75rem] hover:bg-surface-hover hover:cursor-pointer"
+      className="flex items-center px-2 rounded-almostMedium hover:bg-surface-hover hover:cursor-pointer"
       onClick={
         mounted
           ? () => setTheme(theme === 'dark' ? 'light' : 'dark')
@@ -24,8 +24,8 @@ export function ThemeToggle() {
       {
         mounted
           ? theme === "dark"
-            ? <FaRegSun className="w-[15rem]"/>
-            : <FaRegMoon className="w-[15rem]"/>
+            ? <FaRegSun className="w-4"/>
+            : <FaRegMoon className="w-4"/>
           : <></>
       }
     </div>

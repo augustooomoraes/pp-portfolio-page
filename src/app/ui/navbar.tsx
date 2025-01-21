@@ -25,20 +25,20 @@ export function Navbar() {
   return (
     <header className="
       bg-transparent
-      shadow-[0_10px_40px_0_rgba(0,0,0,0.2)]
+      shadow-[0_0.625rem_2.5rem_0_rgba(0,0,0,0.2)]
       h-fit
       col-start-1 col-end-4
-      grid grid-cols-[minmax(40px,_1fr)_minmax(300px,_1000px)_minmax(40px,_1fr)]
+      grid grid-cols-[minmax(2.5rem,_1fr)_minmax(300px,_1000px)_minmax(2.5rem,_1fr)]
     ">
       <nav className="
-        py-[40px]
+        py-10
         flex flex-row flex-nowrap justify-between items-center
         col-start-2 col-end-3
       ">
         <Link
           href="/"
           onClick={() => setIsOpenDdMenu(false)}
-          className="text-[28rem] font-medium text-text-primary dark:text-text-primaryDark"
+          className="text-2.5xl font-medium text-text-primary dark:text-text-primaryDark"
         >
           Augusto Moraes
         </Link>
@@ -46,14 +46,14 @@ export function Navbar() {
         <menu className={classNames(
           nunito_sans.className,
           "hidden md:flex",
-          "text-[22rem] font-normal text-right text-current",
-          "gap-[40px] list-none",
+          "text-1.5xl font-normal text-right text-current",
+          "gap-10 list-none",
         )}>
           { links.map( (link, index) => NavLink(index, link, handleClick) ) }
           <ThemeToggle />
         </menu>
 
-        <div className="flex flex-row gap-[10rem] md:hidden">
+        <div className="flex flex-row gap-2.5 md:hidden">
           <ThemeToggle />
           {
             isOpenDdMenu
@@ -65,9 +65,9 @@ export function Navbar() {
         <menu className={classNames(
           nunito_sans.className,
           "md:hidden",
-          "flex flex-col items-end gap-[4px]",
-          "absolute top-[80px] right-[40px]",
-          isOpenDdMenu ? "p-[4px] rounded-[6px]" : "p-0 rounded-none",
+          "flex flex-col items-end gap-1",
+          "absolute top-20 right-10",
+          isOpenDdMenu ? "p-1 rounded-md" : "p-0 rounded-none",
           "bg-surface-secondary shadow-lg",
           "text-right",
           "overflow-hidden",
@@ -96,7 +96,7 @@ function NavLink(
           onClick={func}
         >
           <div className="
-            w-[120px] py-[1px] pr-[8px]
+            w-32 py-px pr-2
             transition-colors duration-longer
             hover:bg-surface-hover dark:hover:bg-surface-hoverDark
             text-text-primary dark:text-text-primaryDark

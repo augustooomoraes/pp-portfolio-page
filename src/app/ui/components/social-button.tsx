@@ -12,11 +12,11 @@ export default function SocialButton(buttonData: ButtonType) {
   const { icon: Icon, url, title } = buttonData;
 
   return (
-    <div className="bg-surface-secondary rounded-[5rem] shadow-lg w-max">
+    <div className="bg-surface-secondary rounded-md shadow-lg w-max">
       <a
         className="
-          flex flex-row flex-nowrap items-center gap-[18px]
-          py-[15px] pr-[24px] pl-[18px] rounded-[5rem]
+          flex flex-row flex-nowrap items-center gap-4.5
+          py-4 pr-6 pl-4.5 rounded-md
           transition-colors duration-longer
           hover:bg-surface-hover
         "

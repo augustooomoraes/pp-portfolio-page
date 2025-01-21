@@ -51,27 +51,42 @@ export default {
         content: "var(--content-max-width)",
       },
       fontSize: {
-        header1: "var(--header1-size)",
-        header2: "var(--header2-size)",
-        header3: "var(--header3-size)",
-        header4: "var(--header4-size)",
-        paragraph: "var(--paragraph-size)",
-        listItem: "var(--list-item-size)",
+        "1.2xl": "1.3125rem",
+        "1.5xl": "1.375rem",
+        "2.2xl": "1.625rem",
+        "2.5xl": "1.75rem",
+        "3.5xl": "2.125rem",
+        "4.5xl": "2.5rem",
       },
       margin: {
-        header1: "var(--header1-spacing)",
-        header2: "var(--header2-spacing)",
-        header3: "var(--header3-spacing)",
-        header4: "var(--header4-spacing)",
-        paragraph: "var(--paragraph-spacing)",
+        "4.5": "1.125rem",
+      },
+      padding: {
+        "4.5": "1.125rem",
+      },
+      gap: {
+        "4.5": "1.125rem",
       },
       lineHeight: {
-        paragraph: "var(--paragraph-line-height)",
-        listItem: "var(--list-item-line-height)",
+        paragraph: "150%",
+        listItem: "130%",
+        "7.5": "1.875rem",
       },
       transitionDuration: {
-        longer: "var(--transition-duration)",
+        longer: "0.4s",
       },
+      letterSpacing: {
+        notThatWide: "0.0135em",
+      },
+      objectPosition: {
+        "7.5": "1.875rem",
+      },
+      borderRadius: {
+        almostMedium: "0.25rem"
+      },
+      height: {
+        "0.75": "0.1875rem",
+      }
     },
   },
   plugins: [],
