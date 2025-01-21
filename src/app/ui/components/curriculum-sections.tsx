@@ -223,12 +223,104 @@ export const experienceItems: ExperienceItemType[] = [
     place: "Persol Indústria e Comércio de Persianas e Cortinas Ltda",
     role: "Assistente Administrativo",
     items: [
-      <span>Manutenção de dados do sistema interno de produção e gestão;</span>,
-      <span>Desenvolvimento de tabelas de preço por <span className="font-bold dark:font-semibold">Excel</span>;</span>,
-      <span>Elaboração de fichas técnicas de produtos com <span className="font-bold dark:font-semibold">Photoshop</span>, <span className="font-bold dark:font-semibold">Illustrator</span> e <span className="font-bold dark:font-semibold">InDesign</span>;</span>,
-      <span>Produção de modelos tridimensionais de produtos com <span className="font-bold dark:font-semibold">Blender</span>;</span>,
-      <span>Tratamento e relacionamento de dados, elaboração de relatórios e dashboards com <span className="font-bold dark:font-semibold">Power BI Desktop</span> e <span className="font-bold dark:font-semibold">Power BI Report Builder</span>;</span>,        
-      <span>Automação de envios de relatórios por e-mail com <span className="font-bold dark:font-semibold">Power Automate</span>, <span className="font-bold dark:font-semibold">Outlook</span> e <span className="font-bold dark:font-semibold">OneDrive</span>.</span>,
+      <>Manutenção de dados do sistema interno de produção e gestão;</>,
+      <>
+        Desenvolvimento de tabelas de preço por
+        {" "}
+        <span className="font-bold dark:font-semibold">Excel</span>
+        ;
+      </>,
+      <>
+        Elaboração de fichas técnicas de produtos com
+        {" "}
+        <span className="font-bold dark:font-semibold">Photoshop</span>
+        ,
+        {" "}
+        <span className="font-bold dark:font-semibold">Illustrator</span>
+        {" "}
+        e
+        {" "}
+        <span className="font-bold dark:font-semibold">InDesign</span>
+        ;
+      </>,
+      <>
+        Produção de modelos tridimensionais de produtos com
+        {" "}
+        <span className="font-bold dark:font-semibold">Blender</span>
+        ;
+      </>,
+      <>
+        Tratamento e relacionamento de dados, elaboração de relatórios e dashboards com
+        {" "}
+        <span className="font-bold dark:font-semibold">Power BI Desktop</span>
+        {" "}
+        e
+        {" "}
+        <span className="font-bold dark:font-semibold">Power BI Report Builder</span>
+        ;
+      </>,        
+      <>
+        Automação de envios de relatórios por e-mail com
+        {" "}
+        <span className="font-bold dark:font-semibold">Power Automate</span>,
+        {" "}
+        <span className="font-bold dark:font-semibold">Outlook</span>
+        {" "}
+        e
+        {" "}
+        <span className="font-bold dark:font-semibold">OneDrive</span>
+        .
+      </>,
+    ],
+  },
+  {
+    interval: "jan.2024 – dez.2024",
+    place: "Lockeet",
+    role: "Analista de cibersegurança, desenvolvedor fullstack",
+    items: [
+      <>Estudo de protocolos de segurança;</>,
+      <>
+        Customização e conteinerização de instâncias de
+        {" "}
+        <span className="font-bold dark:font-semibold">Keycloak</span>
+        ;
+      </>,
+      <>
+        Gerenciamento de máquinas virtuais pelo
+        {" "}
+        <span className="font-bold dark:font-semibold">Microsoft Azure</span>
+        ;
+      </>,
+      <>
+        Desenvolvimento de aplicações – especialmente do SaaS
+        {" "}
+        <a
+          target="_blank"
+          href="https://briggs.lockeet.com/"
+          className="font-bold dark:font-semibold hover:underline"
+        >
+          BRIGGS
+        </a>
+        :
+        <ul className="list-inside list-disc ml-4 space-y-0.5">
+          <li className="dark:font-light text-1.2xl">desenvolvimento fullstack com Nextjs;</li>
+          <li className="dark:font-light text-1.2xl">
+            integração com
+            {" "}
+            <span className="font-bold dark:font-semibold">Stripe</span>
+            {" "}
+            para configuração de assinaturas recorrentes;
+          </li>
+          <li className="dark:font-light text-1.2xl">integração com APIs;</li>
+          <li className="dark:font-light text-1.2xl">
+            implementação de ferramentas de IA com
+            {" "}
+            <span className="font-bold dark:font-semibold">OpenAI</span>
+            ;
+          </li>
+          <li className="dark:font-light text-1.2xl">gerenciamento de repositório.</li>
+        </ul>
+      </>,
     ],
   },
   {
@@ -236,10 +328,40 @@ export const experienceItems: ExperienceItemType[] = [
     place: "Autônomo",
     role: "Freelancer",
     items: [
-      <span>Produção de <span className="font-bold dark:font-semibold">estampas</span> para roupas e acessórios e de <span className="font-bold dark:font-semibold">materiais de divulgação</span>;</span>,
-      <span>Produção de <span className="font-bold dark:font-semibold">logotipos</span> e edição de <span className="font-bold dark:font-semibold">fotografias e imagens</span> de produtos para catálogos virtuais;</span>,
-      <span>Edição de <span className="font-bold dark:font-semibold">vídeo</span> para aulas virtuais;</span>,
-      <span>Elaboração de projetos para <span className="font-bold dark:font-semibold">móveis e decoração</span>.</span>,
+      <>
+        Produção de
+        {" "}
+        <span className="font-bold dark:font-semibold">estampas</span>
+        {" "}
+        para roupas e acessórios e de
+        {" "}
+        <span className="font-bold dark:font-semibold">materiais de divulgação</span>
+        ;
+      </>,
+      <>
+        Produção de
+        {" "}
+        <span className="font-bold dark:font-semibold">logotipos</span>
+        {" "}
+        e edição de
+        {" "}
+        <span className="font-bold dark:font-semibold">fotografias e imagens</span>
+        {" "}
+        de produtos para catálogos virtuais;
+      </>,
+      <>
+        Edição de
+        {" "}
+        <span className="font-bold dark:font-semibold">vídeo</span>
+        {" "}
+        para aulas virtuais;
+      </>,
+      <>
+        Elaboração de projetos para
+        {" "}
+        <span className="font-bold dark:font-semibold">móveis e decoração</span>
+        .
+      </>,
     ],
   },
 ]
