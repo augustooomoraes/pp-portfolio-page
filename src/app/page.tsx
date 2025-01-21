@@ -8,12 +8,26 @@ export default function Home() {
         <section>
           <h1>Olá!</h1>
           {/* TODO: find out how word-spacing's handled on tailwind */}
-          <p className="home-word-spacing dark:tracking-notThatWide dark:font-light">
-            Chamo-me Augusto, moro em São Francisco de Paula – RS e trabalho com <span className="font-extrabold dark:font-semibold">programação e desenvolvimento web</span>.
-          </p>
-          <p className="home-word-spacing dark:tracking-notThatWide dark:font-light">
-            Procuro empregos onde poderia <span className="font-extrabold dark:font-semibold">estender e aprofundar meus conhecimentos e habilidades</span> na área de desenvolvimento e programação em geral, com profissionais mais experientes e qualificados. Estou <span className="font-extrabold dark:font-semibold">aberto a desafios</span> e interessado em aprender o que for necessário para progredir profissionalmente e me inserir nesta área de atuação.
-          </p>
+          <HomeParagraph>
+            Chamo-me Augusto, moro em São Francisco de Paula – RS, trabalho com
+            {" "}
+            <HomeBold>desenvolvimento web</HomeBold>
+            {" "}
+            e
+            {" "}
+            <HomeBold>diagramação editorial</HomeBold>.
+          </HomeParagraph>
+          <HomeParagraph>
+            Procuro serviços onde poderia
+            {" "}
+            <HomeBold>aplicar, estender e aprofundar</HomeBold>
+            {" "}
+            meus conhecimentos e habilidades em geral. Estou
+            {" "}
+            <HomeBold>aberto a desafios</HomeBold>
+            {" "}
+            e interessado em aprender o que for necessário para entregar os melhores resultados.
+          </HomeParagraph>
         </section>
         <Image
           width={280}
@@ -29,4 +43,20 @@ export default function Home() {
       </div>
     </main>
   );
+}
+
+function HomeParagraph({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return <p className="home-word-spacing dark:tracking-notThatWide dark:font-light">{children}</p>
+}
+
+function HomeBold({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return <span className="font-extrabold dark:font-semibold">{children}</span>
 }
