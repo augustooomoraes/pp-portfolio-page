@@ -12,6 +12,8 @@ type EducationItemType = {
   place: string,
 }
 
+type HabilityItemType = JSX.Element[]
+
 type LanguageItemType = {
   lang: string,
   level: string,
@@ -75,11 +77,11 @@ export function EducationSection( index: number, itemData: EducationItemType ) {
   )
 }
 
-export function HabilitiesSection( index:number, items: string[] ) {
+export function HabilitiesSection( index:number, itemsGroup: HabilityItemType ) {
   return (
     <div key={index}>
       {index !== 0 && <Divisor />}
-      {items.map( (item) => { return (
+      {itemsGroup.map( (item) => { return (
         <li className="dark:font-light text-1.2xl">{item}</li>
       )})}
     </div>
@@ -92,7 +94,7 @@ export function LanguagesSection( index: number, itemData: LanguageItemType ) {
 
   return (
     <div key={index}>
-      <p className="text-1.2xl font-medium dark:font-normal leading-8">
+      <p className="text-1.2xl font-medium dark:font-normal leading-7.5">
         {lang} <span className="italic font-light">({level})</span>
       </p>
       { info && <p className="-mt-2.5 italic font-light dark:font-extralight text-lg leading-3">{info}</p>}
@@ -177,20 +179,30 @@ export const educationItems: EducationItemType[] = [
   },
 ]
 
-export const habilityItems = [
+export const habilityItems: HabilityItemType[]= [
   [
-    "Excel, Power BI, Report Builder",
-    "Power Automate",
+    <>Excel, Power BI, Report Builder</>,
+    <>Power Automate</>,
   ],
   [
-    "Photoshop, Illustrator, InDesign",
-    "Blender",
+    <>Photoshop, Illustrator, InDesign</>,
+    <>Blender</>,
   ],
   [
-    "React, Next.js",
-    "Tailwind CSS",
-    "GitHub",
-  ]
+    <>React, Next.js</>,
+    <>Tailwind CSS</>,
+    <>GitHub</>,
+  ],
+  [
+    <>Docker <span className="font-extralight dark:!font-thin">(conteinerização e instanciação)</span></>,
+    <>Azure <span className="font-extralight dark:!font-thin">(gerenciamento de VMs)</span></>,
+  ],
+  [
+    <>Keycloak</>,
+    <>Stripe <span className="font-extralight dark:!font-thin">(para assinaturas de SaaS)</span></>,
+    <>Integração de APIs</>,
+    <>OpenAI <span className="font-extralight dark:!font-thin">(integração, prompting)</span></>,
+  ],
 ]
 
 export const languageItems: LanguageItemType[] = [
@@ -207,9 +219,9 @@ export const languageItems: LanguageItemType[] = [
 
 export const experienceItems: ExperienceItemType[] = [
   {
-    interval: "jan.2016 – atualmente",
-    place: "Autônomo",
-    role: "Freelancer",
+    interval: "jan.2021 – set.2023",
+    place: "Persol Indústria e Comércio de Persianas e Cortinas Ltda",
+    role: "Assistente Administrativo",
     items: [
       <span>Manutenção de dados do sistema interno de produção e gestão;</span>,
       <span>Desenvolvimento de tabelas de preço por <span className="font-bold dark:font-semibold">Excel</span>;</span>,
