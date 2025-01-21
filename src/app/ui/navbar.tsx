@@ -97,7 +97,7 @@ function NavLink(
         >
           <div className="
             w-32 py-px pr-2
-            transition-colors duration-longer
+            transition-colors duration-300
             hover:bg-surface-hover dark:hover:bg-surface-hoverDark
             text-text-primary dark:text-text-primaryDark
           ">

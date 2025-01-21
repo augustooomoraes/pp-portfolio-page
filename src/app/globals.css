@@ -155,7 +155,7 @@ body {
     @apply font-normal text-1.5xl leading-listItem          my-0 mx-4
   }
   a {
-    @apply text-link-normal visited:text-link-visited hover:text-link-hover active:text-link-active transition-colors duration-longer
+    @apply text-link-normal visited:text-link-visited hover:text-link-hover active:text-link-active transition-colors duration-300
   }
 }
 

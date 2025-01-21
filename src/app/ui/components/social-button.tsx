@@ -17,7 +17,7 @@ export default function SocialButton(buttonData: ButtonType) {
         className="
           flex flex-row flex-nowrap items-center gap-4.5
           py-4 pr-6 pl-4.5 rounded-md
-          transition-colors duration-longer
+          transition-colors duration-300
           hover:bg-surface-hover
         "
         target="_blank"

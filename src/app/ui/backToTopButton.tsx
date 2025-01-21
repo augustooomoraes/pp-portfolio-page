@@ -27,7 +27,7 @@ export function BackToTopButton() {
         bg-surface-secondary shadow-md
         fixed bottom-7 right-7
         w-10 h-10 rounded-almostMedium
-        transition-opacity duration-longer
+        transition-opacity duration-300
         ${visible ? "opacity-100" : "opacity-0"}
       `}>
         <button onClick={visible ? scrollUp : undefined} className={`

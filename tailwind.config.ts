@@ -72,9 +72,6 @@ export default {
         listItem: "130%",
         "7.5": "1.875rem",
       },
-      transitionDuration: {
-        longer: "0.4s",
-      },
       letterSpacing: {
         notThatWide: "0.0135em",
       },
