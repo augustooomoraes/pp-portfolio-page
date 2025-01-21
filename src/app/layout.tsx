@@ -4,6 +4,7 @@ import { Navbar } from "./ui/navbar";
 import { BackToTopButton } from "./ui/backToTopButton";
 
 import { Aleo } from "next/font/google";
+import { ThemeProvider } from "./ui/components/themeToggle/theme-provider";
 const aleo = Aleo({ subsets: ["latin"] });
 
 export const metadata = {
@@ -37,15 +38,25 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="pt-BR">
-      <body className={aleo.className}>
-        <BackToTopButton />
-        <Navbar />
-        {children}
-        <Analytics />
-      </body>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+      >
+        <body className={`${aleo.className} text-text-primary bg-surface-primary antialiased`}>
+          <BackToTopButton />
+          <Navbar />
+          {children}
+          <Analytics />
+        </body>
+      </ThemeProvider>
     </html>
   );
 }
