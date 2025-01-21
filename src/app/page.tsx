@@ -18,7 +18,7 @@ export default function Home() {
         <Image
           width={280}
           height={280}
-          className="rounded-full shadow-[15px_15px_15px_0_rgba(0,0,0,0.2)]"
+          className="rounded-full shadow-2xl"
           src={"/me0.jpg"}
           alt=""
         />

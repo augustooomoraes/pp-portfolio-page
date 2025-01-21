@@ -112,14 +112,6 @@ html, body {
 
 body {
   min-height: 100vh;
-  /* color: rgb(var(--font-color-primary-rgb)); */
-
-  /* background: linear-gradient(81deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0) 100%), rgb(var(--surface-color-primary-rgb)); */
-  /*
-  Com o gradient em ângulo, páginas com mais de 100vh ficavam com o bg diferente.
-  Melhor seria fazê-lo começar de cima/esquerda – não funcionou com o background-position –, mas não consegui. 
-  */
-  /* background-attachment: fixed; */
 
   display: grid;
   align-content: start;

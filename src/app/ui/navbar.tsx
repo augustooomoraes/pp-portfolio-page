@@ -25,7 +25,7 @@ export function Navbar() {
   return (
     <header className="
       bg-transparent
-      shadow-[0_0.625rem_2.5rem_0_rgba(0,0,0,0.2)]
+      shadow-lg
       h-fit
       col-start-1 col-end-4
       grid grid-cols-[minmax(2.5rem,_1fr)_minmax(300px,_1000px)_minmax(2.5rem,_1fr)]
