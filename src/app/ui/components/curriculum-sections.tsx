@@ -48,16 +48,13 @@ export function SectionTitle( {title} : {title: string} ) {
   )
 }
 
-export function Divisor({
-  index,
-  mb,
-} : {
-  index: number,
-  mb?: string,
-} ) {
-  return (
-    <hr key={index} className={`${ mb ? "mb-" + mb : "my-2.5" } max-w-[320px] opacity-30 border-black dark:border-white`} />
-  )
+export function Divisor( {mb} : {mb?: string} ) {
+  return <hr className={`
+    ${ mb ? "mb-" + mb : "my-4" }
+    max-w-[320px]
+    opacity-30
+    border-black dark:border-white
+  `} />
 }
 
 export function EducationSection( index: number, itemData: EducationItemType ) {
@@ -65,21 +62,27 @@ export function EducationSection( index: number, itemData: EducationItemType ) {
   const { timeInterval, title, place } = itemData;
 
   return (
-    <section className="mb-9" key={index}>
-      <h4 className={classNames(aleo.className, "mb-0")}>{title}</h4>
-      <p className="font-light dark:font-extralight text-lg leading-6">
-        {timeInterval}
-      </p>
-      <p className="-mt-4 -mb-5 font-medium">{place}</p>
-    </section>
+    <div key={index}>
+      {index !== 0 && <Divisor />}
+      <section className="mb-8">
+        <h4 className={classNames(aleo.className, "mb-0")}>{title}</h4>
+        <p className="font-light dark:font-extralight text-lg leading-6">
+          {timeInterval}
+        </p>
+        <p className="-mt-4 -mb-5 font-medium">{place}</p>
+      </section>
+    </div>
   )
 }
 
-export function HabilitiesSection( items: string[] ) {
+export function HabilitiesSection( index:number, items: string[] ) {
   return (
-    items.map( (item, index) => { return (
-      <li key={index} className="dark:font-light text-1.2xl">{item}</li>
-    )})
+    <div key={index}>
+      {index !== 0 && <Divisor />}
+      {items.map( (item) => { return (
+        <li className="dark:font-light text-1.2xl">{item}</li>
+      )})}
+    </div>
   )
 }
 
@@ -102,19 +105,22 @@ export function ExperienceSection( index: number, itemData: ExperienceItemType )
   const { interval, place, role, items } = itemData;
 
   return (
-    <div key={index} className="mb-4.5">
-      <p className="text-lg font-light dark:font-extralight">{interval}</p>
-      <p className="text-1.5xl font-normal -mt-5">{place}</p>
-      <p className="text-2.2xl font-bold -mt-3">{role}</p>
-      <ul className="list-inside list-disc -mt-2">
-        {
-          items.map( (item, index) => {
-            return (
-              <li key={index} className="dark:font-light">{item}</li>
-            )
-          })
-        }
-      </ul>
+    <div key={index}>
+      {index !== 0 && <Divisor mb="4.5" />}
+      <div className="mb-4.5">
+        <p className="text-lg font-light dark:font-extralight">{interval}</p>
+        <p className="text-1.5xl font-normal -mt-5">{place}</p>
+        <p className="text-2xl font-bold -mt-3">{role}</p>
+        <ul className="list-inside list-disc -mt-2 space-y-0.5">
+          {
+            items.map( (item, index) => {
+              return (
+                <li key={index} className="dark:font-light text-1.2xl">{item}</li>
+              )
+            })
+          }
+        </ul>
+      </div>
     </div>
   )
 }
@@ -124,31 +130,34 @@ export function CoursesSection( index: number, itemData: CourseItemType ) {
   const { interval, place, location, discipline, paragraph, items } = itemData;
 
   return (
-    <section className="mb-4.5" key={index}>
-      <p className="text-lg font-light dark:font-extralight">{interval}</p>
-      <p className="text-1.5xl font-normal -mt-5">
-        <span className="font-bold dark:font-semibold">{place}</span>
-        {" – "}
-        <span className="font-light dark:font-extralight">{location}</span>
-      </p>
-      <p className="text-2.2xl font-bold -mt-2.5 leading-7.5">{discipline}</p>
-      {
-        paragraph && 
-        <p className="dark:font-light">{paragraph}</p>
-      }
-      {
-        items &&
-        <ul className="list-inside list-disc -mt-2">
-          {
-            items.map( (item, index) => {
-              return (
-                <li key={index} className="dark:font-light">{item}</li>
-              )
-            })
-          }
-        </ul>
-      }
-    </section>
+    <div key={index}>
+      {index !== 0 && <Divisor mb="4.5"/>}
+      <section className="mb-4.5">
+        <p className="text-lg font-light dark:font-extralight">{interval}</p>
+        <p className="text-1.5xl font-normal -mt-5">
+          <span className="font-bold dark:font-semibold">{place}</span>
+          {" – "}
+          <span className="font-light dark:font-extralight">{location}</span>
+        </p>
+        <p className="text-2xl font-bold -mt-2.5 leading-7.5">{discipline}</p>
+        {
+          paragraph && 
+          <p className="dark:font-light -mt-2.5 text-1.2xl leading-7">{paragraph}</p>
+        }
+        {
+          items &&
+          <ul className="list-inside list-disc -mt-1.5  space-y-0.5">
+            {
+              items.map( (item, index) => {
+                return (
+                  <li key={index} className="dark:font-light text-1.2xl">{item}</li>
+                )
+              })
+            }
+          </ul>
+        }
+      </section>
+    </div>
   )
 }
 

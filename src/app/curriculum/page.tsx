@@ -16,39 +16,19 @@ export default function Page() {
 
         <article className="mb-16">
           <SectionTitle title="Educação" />
-          {
-            educationItems.map( (item, index) => {
-              return (
-                <>
-                  {index !== 0 && <Divisor index={index} />}
-                  {EducationSection(index, item)}
-                </>
-              )
-            })
-          }
+          {educationItems.map( (item, index) => EducationSection(index, item) )}
         </article>
 
         <article className="mb-9">
           <SectionTitle title="Habilidades" />
           <ul className="list-inside list-disc ">
-            {
-              habilityItems.map( (item, index) => {
-                return (
-                  <>
-                    {index !== 0 && <Divisor index={index} />}
-                    {HabilitiesSection(item)}
-                  </>
-                )
-              })
-            }
+            {habilityItems.map( (item, index) => HabilitiesSection(index, item) )}
           </ul>
         </article>
 
         <article className="mb-9">
           <SectionTitle title="Idiomas" />
-          {
-            languageItems.map( (item, index) => LanguagesSection(index, item))
-          }
+          {languageItems.map( (item, index) => LanguagesSection(index, item) )}
         </article>
 
       </div>
@@ -57,30 +37,12 @@ export default function Page() {
 
         <article className="mb-9">
           <SectionTitle title="Experiência" />
-          {
-            experienceItems.map( (item, index) => {
-              return (
-                <>
-                  {index !== 0 && <Divisor index={index} mb="4.5" />}
-                  {ExperienceSection(index, item)}
-                </>
-              )
-            })
-          }
+          {experienceItems.map( (item, index) => ExperienceSection(index, item) )}
         </article>
 
         <article className="mb-9">
           <SectionTitle title="Cursos" />
-          {
-            coursesItems.map( (item, index) => {
-              return (
-                <>
-                  {index !== 0 && <Divisor index={index} mb="4.5"/>}
-                  {CoursesSection(index, item)}
-                </>
-              )
-            })
-          }
+          {coursesItems.map( (item, index) => CoursesSection(index, item) )}
         </article>
       </div>
       {/* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= */}
