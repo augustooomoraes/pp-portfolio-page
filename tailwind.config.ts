@@ -45,6 +45,10 @@ export default {
           visited: "var(--link-visited)",
           hover: "var(--link-hover)",
           active: "var(--link-active)",
+          normalDark: "var(--link-normal-dark)",
+          visitedDark: "var(--link-visited-dark)",
+          hoverDark: "var(--link-hover-dark)",
+          activeDark: "var(--link-active-dark)",
         },
       },
       maxWidth: {

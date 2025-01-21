@@ -14,7 +14,12 @@ export function ThemeToggle() {
 
   return (
     <div
-      className="flex items-center px-2 rounded-almostMedium hover:bg-surface-hover hover:cursor-pointer"
+      className="
+        flex items-center
+        px-2 rounded-almostMedium
+        hover:text-link-hover dark:hover:text-link-hoverDark
+        transition-colors duration-300
+        hover:cursor-pointer"
       onClick={
         mounted
           ? () => setTheme(theme === 'dark' ? 'light' : 'dark')

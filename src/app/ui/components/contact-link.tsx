@@ -31,6 +31,8 @@ export default function ContactLink(buttonData: ButtonType) {
           inline-grid grid-cols-[30px_auto]
           items-center
           text-text-primary dark:text-text-primaryDark
+          hover:text-link-hover dark:hover:text-link-hoverDark
+          decoration-inherit transition-none hover:transition-colors duration-300
           text-1.5xl
         ">
           <Icon className="justify-self-center" />

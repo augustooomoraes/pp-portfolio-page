@@ -12,13 +12,13 @@ export default function SocialButton(buttonData: ButtonType) {
   const { icon: Icon, url, title } = buttonData;
 
   return (
-    <div className="bg-surface-secondary rounded-md shadow-lg w-max">
+    <div className="bg-surface-secondary dark:bg-surface-secondaryDark rounded-md shadow-lg w-max">
       <a
         className="
           flex flex-row flex-nowrap items-center gap-4.5
           py-4 pr-6 pl-4.5 rounded-md
           transition-colors duration-300
-          hover:bg-surface-hover
+          hover:bg-surface-hover dark:hover:bg-surface-hoverDark
         "
         target="_blank"
         href={url}

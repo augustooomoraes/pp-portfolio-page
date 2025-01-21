@@ -36,8 +36,8 @@
   --color-secondary-rgb: 5, 82, 106;
   --color-terciary: #7ca7c0;
   --color-terciary-rgb: 124, 167, 192;
-  --color-quaternary: #a2bac7;
-  --color-quaternary-rgb: 162, 186, 199;
+  --color-quaternary: #d6dde0;
+  --color-quaternary-rgb: 214, 221, 224;
 
   --surface-color-primary: var(--color-grey-200);
   --surface-color-primary-rgb: var(--color-grey-200-rgb);
@@ -63,18 +63,23 @@
 
   --font-color-primary: var(--color-black);
   --font-color-primary-rgb: var(--color-black-rgb);
-  --font-color-secondary: var(--color-grey-800);
-  --font-color-secondary-rgb: var(--color-grey-800-rgb);
+  --font-color-secondary: var(--color-grey-700);
+  --font-color-secondary-rgb: var(--color-grey-700-rgb);
 
   --font-color-primary-dark: var(--color-white);
   --font-color-primary-rgb-dark: var(--color-white-rgb);
-  --font-color-secondary-dark: var(--color-grey-300);
-  --font-color-secondary-rgb-dark: var(--color-grey-300-rgb);
+  --font-color-secondary-dark: var(--color-grey-400);
+  --font-color-secondary-rgb-dark: var(--color-grey-400-rgb);
 
   --link-normal: var(--font-color-primary);
   --link-visited: var(--link-normal);
   --link-hover: var(--font-color-secondary);
   --link-active: var(--link-hover);
+
+  --link-normal-dark: var(--font-color-primary-dark);
+  --link-visited-dark: var(--link-normal-dark);
+  --link-hover-dark: var(--font-color-secondary-dark);
+  --link-active-dark: var(--link-hover-dark);
 
   /* --font-primary: "Aleo", sans-serif;
   --font-color-: "Nunito Sans", sans-serif; */
@@ -155,7 +160,7 @@ body {
     @apply font-normal text-1.5xl leading-listItem          my-0 mx-4
   }
   a {
-    @apply text-link-normal visited:text-link-visited hover:text-link-hover active:text-link-active transition-colors duration-300
+    @apply text-link-normal visited:text-link-visited hover:text-link-hover active:text-link-active dark:text-link-normalDark dark:visited:text-link-visitedDark dark:hover:text-link-hoverDark dark:active:text-link-activeDark transition-colors duration-300
   }
 }
 
