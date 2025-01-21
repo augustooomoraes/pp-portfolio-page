@@ -68,7 +68,7 @@ export function Navbar() {
           "flex flex-col items-end gap-1",
           "absolute top-20 right-10",
           isOpenDdMenu ? "p-1 rounded-md" : "p-0 rounded-none",
-          "bg-surface-secondary shadow-lg",
+          "bg-surface-secondary dark:bg-surface-secondaryDark shadow-lg",
           "text-right",
           "overflow-hidden",
           isOpenDdMenu ? "opacity-100" : "opacity-0",
