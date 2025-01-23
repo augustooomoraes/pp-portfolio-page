@@ -2,6 +2,9 @@ import { Aleo } from "next/font/google";
 import classNames from "classnames";
 import { JSX } from "react";
 const aleo = Aleo({ subsets: ["latin"] });
+import GitHubContributionCalendar, { ContributionCalendar } from "./github-contribution-calendar";
+import githubContributionsLockeet from "@/app/data/github-contributions-lockeet.json";
+const parsedGithubContributionsLockeet = githubContributionsLockeet.data.user.contributionsCollection.contributionCalendar
 
 // =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= //
 // =x=x=x=x=x=x=x=x=x=x=x=x=x= types //
@@ -11,6 +14,8 @@ type EducationItemType = {
   timeInterval: JSX.Element,
   place: string,
 }
+
+type HabilityItemType = JSX.Element[]
 
 type LanguageItemType = {
   lang: string,
@@ -23,6 +28,7 @@ type ExperienceItemType = {
   place: string,
   role: string,
   items: JSX.Element[],
+  githubCalendar?: ContributionCalendar,
 }
 
 type CourseItemType = {
@@ -48,16 +54,13 @@ export function SectionTitle( {title} : {title: string} ) {
   )
 }
 
-export function Divisor({
-  index,
-  mb,
-} : {
-  index: number,
-  mb?: string,
-} ) {
-  return (
-    <hr key={index} className={`${ mb ? "mb-" + mb : "my-2.5" } max-w-[320px] opacity-30 border-black dark:border-white`} />
-  )
+export function Divisor( {mb} : {mb?: string} ) {
+  return <hr className={`
+    ${ mb ? "mb-" + mb : "my-4" }
+    max-w-[320px]
+    opacity-30
+    border-black dark:border-white
+  `} />
 }
 
 export function EducationSection( index: number, itemData: EducationItemType ) {
@@ -65,21 +68,27 @@ export function EducationSection( index: number, itemData: EducationItemType ) {
   const { timeInterval, title, place } = itemData;
 
   return (
-    <section className="mb-9" key={index}>
-      <h4 className={classNames(aleo.className, "mb-0")}>{title}</h4>
-      <p className="font-light dark:font-extralight text-lg leading-6">
-        {timeInterval}
-      </p>
-      <p className="-mt-4 -mb-5 font-medium">{place}</p>
-    </section>
+    <div key={index}>
+      {index !== 0 && <Divisor />}
+      <section className="mb-8">
+        <h4 className={classNames(aleo.className, "mb-0")}>{title}</h4>
+        <p className="font-light dark:font-extralight text-lg leading-6">
+          {timeInterval}
+        </p>
+        <p className="-mt-4 -mb-5 font-medium">{place}</p>
+      </section>
+    </div>
   )
 }
 
-export function HabilitiesSection( items: string[] ) {
+export function HabilitiesSection( index:number, itemsGroup: HabilityItemType ) {
   return (
-    items.map( (item, index) => { return (
-      <li key={index} className="dark:font-light text-1.2xl">{item}</li>
-    )})
+    <div key={index}>
+      {index !== 0 && <Divisor />}
+      {itemsGroup.map( (item) => { return (
+        <li className="dark:font-light text-1.2xl">{item}</li>
+      )})}
+    </div>
   )
 }
 
@@ -89,32 +98,36 @@ export function LanguagesSection( index: number, itemData: LanguageItemType ) {
 
   return (
     <div key={index}>
-      <p className="text-1.2xl font-medium dark:font-normal leading-8">
+      <p className="text-1.2xl font-medium dark:font-normal leading-7.5">
         {lang} <span className="italic font-light">({level})</span>
       </p>
-      { info && <p className="-mt-2.5 italic font-light dark:font-extralight text-lg leading-3">{info}</p>}
+      {info && <p className="-mt-2.5 italic font-light dark:font-extralight text-lg leading-3">{info}</p>}
     </div>
   )
 }
 
 export function ExperienceSection( index: number, itemData: ExperienceItemType ) {
 
-  const { interval, place, role, items } = itemData;
+  const { interval, place, role, items, githubCalendar } = itemData;
 
   return (
-    <div key={index} className="mb-4.5">
-      <p className="text-lg font-light dark:font-extralight">{interval}</p>
-      <p className="text-1.5xl font-normal -mt-5">{place}</p>
-      <p className="text-2.2xl font-bold -mt-3">{role}</p>
-      <ul className="list-inside list-disc -mt-2">
-        {
-          items.map( (item, index) => {
-            return (
-              <li key={index} className="dark:font-light">{item}</li>
-            )
-          })
-        }
-      </ul>
+    <div key={index}>
+      {index !== 0 && <Divisor mb="4.5" />}
+      <div className="mb-4.5">
+        <p className="text-lg font-light dark:font-extralight">{interval}</p>
+        <p className="text-1.5xl font-normal -mt-5">{place}</p>
+        <p className="text-2xl font-bold -mt-3">{role}</p>
+        <ul className="list-inside list-disc -mt-2 space-y-0.5">
+          {
+            items.map( (item, index) => {
+              return (
+                <li key={index} className="dark:font-light text-1.2xl">{item}</li>
+              )
+            })
+          }
+        </ul>
+      </div>
+      {githubCalendar && <GitHubContributionCalendar calendarData={githubCalendar} />}
     </div>
   )
 }
@@ -124,31 +137,34 @@ export function CoursesSection( index: number, itemData: CourseItemType ) {
   const { interval, place, location, discipline, paragraph, items } = itemData;
 
   return (
-    <section className="mb-4.5" key={index}>
-      <p className="text-lg font-light dark:font-extralight">{interval}</p>
-      <p className="text-1.5xl font-normal -mt-5">
-        <span className="font-bold dark:font-semibold">{place}</span>
-        {" – "}
-        <span className="font-light dark:font-extralight">{location}</span>
-      </p>
-      <p className="text-2.2xl font-bold -mt-2.5 leading-7.5">{discipline}</p>
-      {
-        paragraph && 
-        <p className="dark:font-light">{paragraph}</p>
-      }
-      {
-        items &&
-        <ul className="list-inside list-disc -mt-2">
-          {
-            items.map( (item, index) => {
-              return (
-                <li key={index} className="dark:font-light">{item}</li>
-              )
-            })
-          }
-        </ul>
-      }
-    </section>
+    <div key={index}>
+      {index !== 0 && <Divisor mb="4.5"/>}
+      <section className="mb-4.5">
+        <p className="text-lg font-light dark:font-extralight">{interval}</p>
+        <p className="text-1.5xl font-normal -mt-5">
+          <span className="font-bold dark:font-semibold">{place}</span>
+          {" – "}
+          <span className="font-light dark:font-extralight">{location}</span>
+        </p>
+        <p className="text-2xl font-bold -mt-2.5 leading-7.5">{discipline}</p>
+        {
+          paragraph && 
+          <p className="dark:font-light -mt-2.5 text-1.2xl leading-7">{paragraph}</p>
+        }
+        {
+          items &&
+          <ul className="list-inside list-disc -mt-1.5  space-y-0.5">
+            {
+              items.map( (item, index) => {
+                return (
+                  <li key={index} className="dark:font-light text-1.2xl">{item}</li>
+                )
+              })
+            }
+          </ul>
+        }
+      </section>
+    </div>
   )
 }
 
@@ -168,20 +184,30 @@ export const educationItems: EducationItemType[] = [
   },
 ]
 
-export const habilityItems = [
+export const habilityItems: HabilityItemType[]= [
   [
-    "Excel, Power BI, Report Builder",
-    "Power Automate",
+    <>Excel, Power BI, Report Builder</>,
+    <>Power Automate</>,
   ],
   [
-    "Photoshop, Illustrator, InDesign",
-    "Blender",
+    <>Photoshop, Illustrator, InDesign</>,
+    <>Blender</>,
   ],
   [
-    "React, Next.js",
-    "Tailwind CSS",
-    "GitHub",
-  ]
+    <>React, Next.js</>,
+    <>Tailwind CSS</>,
+    <>GitHub</>,
+  ],
+  [
+    <>Docker <span className="font-extralight dark:!font-thin">(conteinerização e instanciação)</span></>,
+    <>Azure <span className="font-extralight dark:!font-thin">(gerenciamento de VMs)</span></>,
+  ],
+  [
+    <>Keycloak</>,
+    <>Stripe <span className="font-extralight dark:!font-thin">(para assinaturas de SaaS)</span></>,
+    <>Integração de APIs</>,
+    <>OpenAI <span className="font-extralight dark:!font-thin">(integração, prompting)</span></>,
+  ],
 ]
 
 export const languageItems: LanguageItemType[] = [
@@ -198,27 +224,150 @@ export const languageItems: LanguageItemType[] = [
 
 export const experienceItems: ExperienceItemType[] = [
   {
-    interval: "jan.2016 – atualmente",
-    place: "Autônomo",
-    role: "Freelancer",
+    interval: "jan.2021 – set.2023",
+    place: "Persol Indústria e Comércio de Persianas e Cortinas Ltda",
+    role: "Assistente Administrativo",
     items: [
-      <span>Manutenção de dados do sistema interno de produção e gestão;</span>,
-      <span>Desenvolvimento de tabelas de preço por <span className="font-bold dark:font-semibold">Excel</span>;</span>,
-      <span>Elaboração de fichas técnicas de produtos com <span className="font-bold dark:font-semibold">Photoshop</span>, <span className="font-bold dark:font-semibold">Illustrator</span> e <span className="font-bold dark:font-semibold">InDesign</span>;</span>,
-      <span>Produção de modelos tridimensionais de produtos com <span className="font-bold dark:font-semibold">Blender</span>;</span>,
-      <span>Tratamento e relacionamento de dados, elaboração de relatórios e dashboards com <span className="font-bold dark:font-semibold">Power BI Desktop</span> e <span className="font-bold dark:font-semibold">Power BI Report Builder</span>;</span>,        
-      <span>Automação de envios de relatórios por e-mail com <span className="font-bold dark:font-semibold">Power Automate</span>, <span className="font-bold dark:font-semibold">Outlook</span> e <span className="font-bold dark:font-semibold">OneDrive</span>.</span>,
+      <>Manutenção de dados do sistema interno de produção e gestão;</>,
+      <>
+        Desenvolvimento de tabelas de preço por
+        {" "}
+        <span className="font-bold dark:font-semibold">Excel</span>
+        ;
+      </>,
+      <>
+        Elaboração de fichas técnicas de produtos com
+        {" "}
+        <span className="font-bold dark:font-semibold">Photoshop</span>
+        ,
+        {" "}
+        <span className="font-bold dark:font-semibold">Illustrator</span>
+        {" "}
+        e
+        {" "}
+        <span className="font-bold dark:font-semibold">InDesign</span>
+        ;
+      </>,
+      <>
+        Produção de modelos tridimensionais de produtos com
+        {" "}
+        <span className="font-bold dark:font-semibold">Blender</span>
+        ;
+      </>,
+      <>
+        Tratamento e relacionamento de dados, elaboração de relatórios e dashboards com
+        {" "}
+        <span className="font-bold dark:font-semibold">Power BI Desktop</span>
+        {" "}
+        e
+        {" "}
+        <span className="font-bold dark:font-semibold">Power BI Report Builder</span>
+        ;
+      </>,        
+      <>
+        Automação de envios de relatórios por e-mail com
+        {" "}
+        <span className="font-bold dark:font-semibold">Power Automate</span>,
+        {" "}
+        <span className="font-bold dark:font-semibold">Outlook</span>
+        {" "}
+        e
+        {" "}
+        <span className="font-bold dark:font-semibold">OneDrive</span>
+        .
+      </>,
     ],
+  },
+  {
+    interval: "jan.2024 – dez.2024",
+    place: "Lockeet",
+    role: "Analista de cibersegurança, desenvolvedor fullstack",
+    items: [
+      <>Estudo de protocolos de segurança;</>,
+      <>
+        Customização e conteinerização de instâncias de
+        {" "}
+        <span className="font-bold dark:font-semibold">Keycloak</span>
+        ;
+      </>,
+      <>
+        Gerenciamento de máquinas virtuais pelo
+        {" "}
+        <span className="font-bold dark:font-semibold">Microsoft Azure</span>
+        ;
+      </>,
+      <>
+        Desenvolvimento de aplicações – especialmente do SaaS
+        {" "}
+        <a
+          target="_blank"
+          href="https://briggs.lockeet.com/"
+          className="font-bold dark:font-semibold hover:underline"
+        >
+          BRIGGS
+        </a>
+        :
+        <ul className="list-inside list-disc ml-4 space-y-0.5">
+          <li className="dark:font-light text-1.2xl">desenvolvimento fullstack com Nextjs;</li>
+          <li className="dark:font-light text-1.2xl">
+            integração com
+            {" "}
+            <span className="font-bold dark:font-semibold">Stripe</span>
+            {" "}
+            para configuração de assinaturas recorrentes;
+          </li>
+          <li className="dark:font-light text-1.2xl">integração com APIs;</li>
+          <li className="dark:font-light text-1.2xl">
+            implementação de ferramentas de IA com
+            {" "}
+            <span className="font-bold dark:font-semibold">OpenAI</span>
+            ;
+          </li>
+          <li className="dark:font-light text-1.2xl">gerenciamento de repositório.</li>
+        </ul>
+      </>,
+    ],
+    githubCalendar: parsedGithubContributionsLockeet,
   },
   {
     interval: "jan.2016 – atualmente",
     place: "Autônomo",
     role: "Freelancer",
     items: [
-      <span>Produção de <span className="font-bold dark:font-semibold">estampas</span> para roupas e acessórios e de <span className="font-bold dark:font-semibold">materiais de divulgação</span>;</span>,
-      <span>Produção de <span className="font-bold dark:font-semibold">logotipos</span> e edição de <span className="font-bold dark:font-semibold">fotografias e imagens</span> de produtos para catálogos virtuais;</span>,
-      <span>Edição de <span className="font-bold dark:font-semibold">vídeo</span> para aulas virtuais;</span>,
-      <span>Elaboração de projetos para <span className="font-bold dark:font-semibold">móveis e decoração</span>.</span>,
+      <>
+        Produção de
+        {" "}
+        <span className="font-bold dark:font-semibold">estampas</span>
+        {" "}
+        para roupas e acessórios e de
+        {" "}
+        <span className="font-bold dark:font-semibold">materiais de divulgação</span>
+        ;
+      </>,
+      <>
+        Produção de
+        {" "}
+        <span className="font-bold dark:font-semibold">logotipos</span>
+        {" "}
+        e edição de
+        {" "}
+        <span className="font-bold dark:font-semibold">fotografias e imagens</span>
+        {" "}
+        de produtos para catálogos virtuais;
+      </>,
+      <>
+        Edição de
+        {" "}
+        <span className="font-bold dark:font-semibold">vídeo</span>
+        {" "}
+        para aulas virtuais;
+      </>,
+      <>
+        Elaboração de projetos para
+        {" "}
+        <span className="font-bold dark:font-semibold">móveis e decoração</span>
+        .
+      </>,
     ],
   },
 ]
