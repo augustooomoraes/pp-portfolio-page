@@ -2,6 +2,9 @@ import { Aleo } from "next/font/google";
 import classNames from "classnames";
 import { JSX } from "react";
 const aleo = Aleo({ subsets: ["latin"] });
+import GitHubContributionCalendar, { ContributionCalendar } from "./github-contribution-calendar";
+import githubContributionsLockeet from "@/app/data/github-contributions-lockeet.json";
+const parsedGithubContributionsLockeet = githubContributionsLockeet.data.user.contributionsCollection.contributionCalendar
 
 // =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x= //
 // =x=x=x=x=x=x=x=x=x=x=x=x=x= types //
@@ -25,6 +28,7 @@ type ExperienceItemType = {
   place: string,
   role: string,
   items: JSX.Element[],
+  githubCalendar?: ContributionCalendar,
 }
 
 type CourseItemType = {
@@ -97,14 +101,14 @@ export function LanguagesSection( index: number, itemData: LanguageItemType ) {
       <p className="text-1.2xl font-medium dark:font-normal leading-7.5">
         {lang} <span className="italic font-light">({level})</span>
       </p>
-      { info && <p className="-mt-2.5 italic font-light dark:font-extralight text-lg leading-3">{info}</p>}
+      {info && <p className="-mt-2.5 italic font-light dark:font-extralight text-lg leading-3">{info}</p>}
     </div>
   )
 }
 
 export function ExperienceSection( index: number, itemData: ExperienceItemType ) {
 
-  const { interval, place, role, items } = itemData;
+  const { interval, place, role, items, githubCalendar } = itemData;
 
   return (
     <div key={index}>
@@ -123,6 +127,7 @@ export function ExperienceSection( index: number, itemData: ExperienceItemType )
           }
         </ul>
       </div>
+      {githubCalendar && <GitHubContributionCalendar calendarData={githubCalendar} />}
     </div>
   )
 }
@@ -322,6 +327,7 @@ export const experienceItems: ExperienceItemType[] = [
         </ul>
       </>,
     ],
+    githubCalendar: parsedGithubContributionsLockeet,
   },
   {
     interval: "jan.2016 – atualmente",

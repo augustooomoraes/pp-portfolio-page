@@ -11,22 +11,22 @@ export default {
     extend: {
       colors: {
         color: {
-          primary: "var(--color-primary)",
-          secondary: "var(--color-secondary)",
-          terciary: "var(--color-terciary)",
-          quaternary: "var(--color-quaternary)",
+          primary: "rgba(var(--color-primary-rgb))",
+          secondary: "rgba(var(--color-secondary-rgb))",
+          terciary: "rgba(var(--color-terciary-rgb))",
+          quaternary: "rgba(var(--color-quaternary-rgb))",
         },
         surface: {
-          primary: "var(--surface-color-primary)",
-          secondary: "var(--surface-color-secondary)",
-          terciary: "var(--surface-color-terciary)",
-          quaternary: "var(--surface-color-quaternary)",
+          primary: "rgba(var(--surface-color-primary-rgb))",
+          secondary: "rgba(var(--surface-color-secondary-rgb))",
+          terciary: "rgba(var(--surface-color-terciary-rgb))",
+          quaternary: "rgba(var(--surface-color-quaternary-rgb))",
           hover: "var(--surface-color-hover)",
 
-          primaryDark: "var(--surface-color-primary-dark)",
-          secondaryDark: "var(--surface-color-secondary-dark)",
-          terciaryDark: "var(--surface-color-terciary-dark)",
-          quaternaryDark: "var(--surface-color-quaternary-dark)",
+          primaryDark: "rgba(var(--surface-color-primary-rgb-dark))",
+          secondaryDark: "rgba(var(--surface-color-secondary-rgb-dark))",
+          terciaryDark: "rgba(var(--surface-color-terciary-rgb-dark))",
+          quaternaryDark: "rgba(var(--surface-color-quaternary-rgb-dark))",
           hoverDark: "var(--surface-color-hover-dark)",
         },
         text: {
