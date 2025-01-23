@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <main className={classNames(nunito_sans.className, "grid grid-cols-[1fr] lg:grid-cols-[400px_1fr] lg:gap-x-5")}>
+    <main className={classNames(nunito_sans.className, "grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[400px_minmax(0,1fr)] lg:gap-x-5")}>
 
       <div> {/* Primeira coluna */}
 
