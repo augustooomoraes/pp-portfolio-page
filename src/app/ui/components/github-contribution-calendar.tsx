@@ -40,10 +40,10 @@ export default function GitHubContributionCalendar( {calendarData} : {calendarDa
   );
 
   const legend: { min: number; max: number }[] = [
-    { min: 1, max: Math.floor(0.25 * maxContribution) },           // 1 contribution - <= 25% maxContribution
-    { min: Math.floor(0.25 * maxContribution) + 1, max: Math.floor(0.5 * maxContribution) }, // > 25% - <= 50%
-    { min: Math.floor(0.5 * maxContribution) + 1, max: Math.floor(0.75 * maxContribution) }, // > 50% - <= 75%
-    { min: Math.floor(0.75 * maxContribution) + 1, max: maxContribution }                   // > 75%
+    { min: 1,                                      max: Math.floor(0.25 * maxContribution) },
+    { min: Math.floor(0.25 * maxContribution) + 1, max: Math.floor(0.50 * maxContribution) },
+    { min: Math.floor(0.50 * maxContribution) + 1, max: Math.floor(0.75 * maxContribution) },
+    { min: Math.floor(0.75 * maxContribution) + 1, max: maxContribution }
   ];
 
   const getBackgroundColor = (count: number): string => {
@@ -60,35 +60,37 @@ export default function GitHubContributionCalendar( {calendarData} : {calendarDa
   return (
     <div className="
       flex flex-col gap-2 items-end
-      mb-6 p-1.5 rounded-md
+      w-min mb-6 p-1.5 rounded-md
       bg-surface-hoverDark dark:bg-surface-hover
     ">
 
-      <div className="grid grid-rows-7 gap-0.5">
-        {
-          rows.map((row, rowIndex) => {
-            return (
-              <div className="flex flex-row gap-0.5 flex-nowrap" key={rowIndex}>
-                {
-                  row.contributionDays.map((day, dayIndex) => {
-                    return (
-                      <div
-                        key={`${rowIndex}-${dayIndex}`}
-                        title={`${formatGithubContributionsDate(day.date)}: ${day.contributionCount} ${day.contributionCount === 1 ? "contribuição" : "contribuições"}`}
-                        className={`
-                          w-2.5 h-2.5 rounded
-                          border border-0.5
-                          border-color-quaternary dark:border-color-primary
-                          ${getBackgroundColor(day.contributionCount)}
-                        `}
-                      />
-                    )
-                  })
-                }
-              </div>
-            )
-          })
-        }
+      <div className="overflow-x-auto w-auto">
+        <div className="grid grid-rows-7 gap-0.5">
+          {
+            rows.map((row, rowIndex) => {
+              return (
+                <div className="flex flex-row gap-0.5 flex-nowrap" key={rowIndex}>
+                  {
+                    row.contributionDays.map((day, dayIndex) => {
+                      return (
+                        <div
+                          key={`${rowIndex}-${dayIndex}`}
+                          title={`${formatGithubContributionsDate(day.date)}: ${day.contributionCount} ${day.contributionCount === 1 ? "contribuição" : "contribuições"}`}
+                          className={`
+                            w-2.5 h-2.5 rounded
+                            border border-0.5
+                            border-color-quaternary dark:border-color-primary
+                            ${getBackgroundColor(day.contributionCount)}
+                          `}
+                        />
+                      )
+                    })
+                  }
+                </div>
+              )
+            })
+          }
+        </div>
       </div>
 
       <div className="flex flex-row items-center gap-1.5 w-full">
