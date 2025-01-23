@@ -7,20 +7,37 @@ import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
 
 import { Nunito_Sans } from "next/font/google";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ThemeToggle } from "./components/themeToggle/theme-toggle";
+
 const nunito_sans = Nunito_Sans({ subsets: ["latin"] });
 
 export function Navbar() {
   const [isOpenDdMenu, setIsOpenDdMenu] = useState(false);
+  const menuRef = useRef<HTMLMenuElement | null>(null);
+
   function handleClick() {
     setIsOpenDdMenu((prev) => !prev);
   }
-  /**
-   * https://www.youtube.com/watch?v=IF6k0uZuypA&t=656s
-   * Baseado nesse State acima, controlar as classes do <menu>.
-   * Fazer algo semelhante no backToTopButton.js.
-   */
+
+  useEffect(() => {
+    function handleOutsideClick(event: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpenDdMenu(false);
+      }
+    }
+
+    if (isOpenDdMenu) {
+      document.addEventListener("mousedown", handleOutsideClick);
+    } else {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    }
+
+    // Cleanup on unmount or state change
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [isOpenDdMenu]);
 
   return (
     <header className="
@@ -57,22 +74,40 @@ export function Navbar() {
           <ThemeToggle />
           {
             isOpenDdMenu
-            ? <IoClose onClick={handleClick} className="md:hidden cursor-pointer" />
-            : <IoMenu onClick={handleClick} className="cursor-pointer" />
+            ? <IoClose
+              onClick={handleClick}
+              className="
+                md:hidden
+                cursor-pointer
+                hover:text-link-hover dark:hover:text-link-hoverDark
+                transition-colors duration-300
+              "
+            />
+            : <IoMenu
+              onClick={handleClick}
+              className="
+                cursor-pointer
+                hover:text-link-hover dark:hover:text-link-hoverDark
+                transition-colors duration-300
+              "
+            />
           }
         </div>
 
-        <menu className={classNames(
-          nunito_sans.className,
-          "md:hidden",
-          "flex flex-col items-end gap-1",
-          "absolute top-20 right-10",
-          isOpenDdMenu ? "p-1 rounded-md" : "p-0 rounded-none",
-          "bg-surface-secondary dark:bg-surface-secondaryDark shadow-lg",
-          "text-right",
-          "overflow-hidden",
-          isOpenDdMenu ? "opacity-100" : "opacity-0",
-        )}>
+        <menu
+          ref={menuRef}
+          className={classNames(
+            nunito_sans.className,
+            "md:hidden",
+            "flex flex-col items-end gap-1",
+            "absolute top-20 right-10",
+            isOpenDdMenu ? "p-1 rounded-md" : "p-0 rounded-none",
+            "bg-surface-secondary dark:bg-surface-secondaryDark shadow-lg",
+            "text-right",
+            "overflow-hidden",
+            isOpenDdMenu ? "opacity-100" : "opacity-0",
+          )}
+        >
           { links.map( (link, index) => NavLink(index, link, handleClick, true, isOpenDdMenu) ) }
         </menu>
       </nav>
