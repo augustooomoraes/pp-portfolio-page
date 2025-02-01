@@ -5,6 +5,7 @@ import { BackToTopButton } from "./ui/backToTopButton";
 
 import { Aleo } from "next/font/google";
 import { ThemeProvider } from "./ui/components/themeToggle/theme-provider";
+import AppFooter from "./ui/components/footer";
 const aleo = Aleo({ subsets: ["latin"] });
 
 export const metadata = {
@@ -56,6 +57,7 @@ export default function RootLayout({
           {children}
           <Analytics />
         </body>
+        <AppFooter />
       </ThemeProvider>
     </html>
   );
