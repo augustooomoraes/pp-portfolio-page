@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Button } from "@/shadcnui/components/ui/button"
+import { Card, CardContent, CardFooter } from "@/shadcnui/components/ui/card"
+import { Badge } from "@/shadcnui/components/ui/badge"
 import { ExternalLink, Github } from "lucide-react"
 import Image from "next/image"
 
