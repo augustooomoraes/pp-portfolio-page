@@ -1,7 +1,7 @@
 import { JSX } from "react";
 import { IconType } from "react-icons";
 import { FaGithub, FaInstagram, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
-import { FaCakeCandles, FaFigma, FaWhatsapp } from "react-icons/fa6";
+import { FaCakeCandles, FaFigma, FaWhatsapp, FaYoutube } from "react-icons/fa6";
 import { HiOutlineHandRaised } from "react-icons/hi2";
 import { LuMail } from "react-icons/lu";
 
@@ -93,6 +93,11 @@ export const links: ButtonType[] = [
   {
     icon: FaInstagram,
     url: "https://www.instagram.com/augustooomoraes/",
+    title: <span>@augustooo&shy;moraes</span>,
+  },
+  {
+    icon: FaYoutube,
+    url: "https://www.youtube.com/@augustooomoraes",
     title: <span>@augustooo&shy;moraes</span>,
   },
   {
