@@ -1,7 +1,7 @@
 import { Nunito_Sans } from "next/font/google";
 import { Aleo } from "next/font/google";
 import classNames from "classnames";
-import ContactLink, { links } from "../ui/components/contact-link";
+import ContactLink, { links } from "../../ui/components/contact-link";
 const nunito_sans = Nunito_Sans({ subsets: ["latin"] });
 const aleo = Aleo({ subsets: ["latin"] });
 
