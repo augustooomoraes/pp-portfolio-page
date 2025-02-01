@@ -1,7 +1,7 @@
 import classNames from "classnames";
 
 import { Nunito_Sans } from "next/font/google";
-import { coursesItems, CoursesSection, Divisor, educationItems, EducationSection, experienceItems, ExperienceSection, HabilitiesSection, habilityItems, languageItems, LanguagesSection, SectionTitle } from "../ui/components/curriculum-sections";
+import { coursesItems, CoursesSection, Divisor, educationItems, EducationSection, experienceItems, ExperienceSection, HabilitiesSection, habilityItems, languageItems, LanguagesSection, SectionTitle } from "../../ui/components/curriculum-sections";
 const nunito_sans = Nunito_Sans({ subsets: ["latin"] });
 
 export const metadata = {

@@ -25,7 +25,8 @@ export function BackToTopButton() {
     <>
       <div className={`
         bg-surface-secondary dark:bg-surface-secondaryDark
-        shadow-lg
+        shadow-
+        z-20
         fixed bottom-7 right-7
         w-10 h-10 rounded-almostMedium
         transition-opacity duration-300
