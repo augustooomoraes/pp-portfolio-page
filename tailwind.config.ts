@@ -110,9 +110,6 @@ export default {
   			listItem: '130%',
   			'7.5': '1.875rem'
   		},
-  		letterSpacing: {
-  			notThatWide: '0.0135em'
-  		},
   		objectPosition: {
   			'7.5': '1.875rem'
   		},

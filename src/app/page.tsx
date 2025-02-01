@@ -50,7 +50,7 @@ function HomeParagraph({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <p className="home-word-spacing dark:tracking-notThatWide dark:font-light">{children}</p>
+  return <p className="home-word-spacing">{children}</p>
 }
 
 function HomeBold({
@@ -58,5 +58,5 @@ function HomeBold({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <span className="font-extrabold dark:font-semibold">{children}</span>
+  return <span className="font-extrabold">{children}</span>
 }
