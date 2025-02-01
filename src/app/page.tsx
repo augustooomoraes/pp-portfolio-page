@@ -1,5 +1,6 @@
 import Image from "next/image";
 import SocialButton, { links } from "./ui/components/social-button";
+import ProfilePic from "@/../public/profile-pic/me2edit.jpg"
 
 export default function Home() {
   return (
@@ -33,7 +34,7 @@ export default function Home() {
           width={280}
           height={280}
           className="rounded-full shadow-2xl"
-          src={"/me2edit.jpg"}
+          src={ProfilePic}
           alt=""
         />
       </div>
