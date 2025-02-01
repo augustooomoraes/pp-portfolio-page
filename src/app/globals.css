@@ -13,6 +13,7 @@
   --color-grey-100-rgb: 245, 245, 245;
   --color-grey-200: #eeeeee;
   --color-grey-200-rgb: 238, 238, 238;
+  --color-grey-200-hsl: 0 0% 93%;
   --color-grey-300: #e0e0e0;
   --color-grey-300-rgb: 224, 224, 224;
   --color-grey-400: #bdbdbd;
@@ -29,6 +30,7 @@
   --color-grey-900-rgb: 33, 33, 33;
   --color-black: #000000;
   --color-black-rgb: 0, 0, 0;
+  --color-black-hsl: 0 0% 0%;
 
   --color-primary: #072b36;
   --color-primary-rgb: 7, 43, 54;
@@ -41,6 +43,7 @@
 
   --surface-color-primary: var(--color-grey-200);
   --surface-color-primary-rgb: var(--color-grey-200-rgb);
+  --surface-color-primary-hsl: var(--color-grey-200-hsl);
   --surface-color-secondary: var(--color-quaternary);
   --surface-color-secondary-rgb: var(--color-quaternary-rgb);
   --surface-color-terciary: var(--color-terciary);
@@ -63,6 +66,7 @@
 
   --font-color-primary: var(--color-black);
   --font-color-primary-rgb: var(--color-black-rgb);
+  --font-color-primary-hsl: var(--color-black-hsl);
   --font-color-secondary: var(--color-grey-700);
   --font-color-secondary-rgb: var(--color-grey-700-rgb);
 
@@ -80,9 +84,6 @@
   --link-visited-dark: var(--link-normal-dark);
   --link-hover-dark: var(--font-color-secondary-dark);
   --link-active-dark: var(--link-hover-dark);
-
-  /* --font-primary: "Aleo", sans-serif;
-  --font-color-: "Nunito Sans", sans-serif; */
 
   /* =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x Other
 =x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x */
@@ -154,9 +155,10 @@ body {
   a {
     @apply text-link-normal visited:text-link-visited hover:text-link-hover active:text-link-active dark:text-link-normalDark dark:visited:text-link-visitedDark dark:hover:text-link-hoverDark dark:active:text-link-activeDark transition-colors duration-300
   }
+
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --background: var(--surface-color-primary-hsl);
+    --foreground: var(--font-color-primary-hsl);
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
