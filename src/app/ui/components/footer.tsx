@@ -40,10 +40,9 @@ export default function AppFooter() {
                 <FaLinkedin className="w-5 h-5"/>
               </a>
 
-              {/* TODO: link this repo's page (when it's public... if that's gonna happen) */}
               <a
                 target="_blank"
-                href="https://github.com/augustooomoraes"
+                href="https://github.com/augustooomoraes/pp-portfolio-page"
                 className="hover:text-linkHover active:text-linkActive"
               >
                 <FaGithub className="w-5 h-5"/>
