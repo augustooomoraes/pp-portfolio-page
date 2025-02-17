@@ -53,6 +53,8 @@
 
   --surface-color-hover: rgba(var(--color-white-rgb), 0.15);
 
+  --surface-color-card: rgba(var(--color-black-rgb), 0.05);
+
   --surface-color-primary-dark: var(--color-primary);
   --surface-color-primary-rgb-dark: var(--color-primary-rgb);
   --surface-color-secondary-dark: var(--color-secondary);
@@ -63,6 +65,8 @@
   --surface-color-quaternary-rgb-dark: var(--color-quaternary-rgb);
 
   --surface-color-hover-dark: rgba(var(--color-black-rgb), 0.15);
+
+  --surface-color-card-dark: rgba(var(--color-white-rgb), 0.05);
 
   --font-color-primary: var(--color-black);
   --font-color-primary-rgb: var(--color-black-rgb);

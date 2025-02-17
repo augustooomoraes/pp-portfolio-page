@@ -22,11 +22,13 @@ export default {
   				terciary: 'rgba(var(--surface-color-terciary-rgb))',
   				quaternary: 'rgba(var(--surface-color-quaternary-rgb))',
   				hover: 'var(--surface-color-hover)',
+  				card: 'var(--surface-color-card)',
   				primaryDark: 'rgba(var(--surface-color-primary-rgb-dark))',
   				secondaryDark: 'rgba(var(--surface-color-secondary-rgb-dark))',
   				terciaryDark: 'rgba(var(--surface-color-terciary-rgb-dark))',
   				quaternaryDark: 'rgba(var(--surface-color-quaternary-rgb-dark))',
-  				hoverDark: 'var(--surface-color-hover-dark)'
+  				hoverDark: 'var(--surface-color-hover-dark)',
+  				cardDark: 'var(--surface-color-card-dark)'
   			},
   			text: {
   				primary: 'var(--font-color-primary)',
