@@ -11,7 +11,7 @@ const cardVariants = cva(
         default:
           "bg-card text-card-foreground ",
         web:
-          "bg-surface-hoverDark dark:bg-surface-hover",
+          "bg-surface-card dark:bg-surface-cardDark ",
       },
     },
     defaultVariants: {
