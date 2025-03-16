@@ -10,8 +10,6 @@ const cardVariants = cva(
       variant: {
         default:
           "bg-card text-card-foreground ",
-        web:
-          "bg-surface-card dark:bg-surface-cardDark ",
       },
     },
     defaultVariants: {

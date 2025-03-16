@@ -33,7 +33,7 @@ export default function PortfolioCard({
   githubUrl = "#",
 }: PortfolioCardProps) {
   return (
-    <Card variant="web" className="!border-none group relative overflow-hidden transition-all hover:shadow-lg rounded-xl">
+    <Card className="bg-surface-card dark:bg-surface-cardDark !border-none group relative overflow-hidden transition-all hover:shadow-lg rounded-xl">
 
       <div className="aspect-[2/1] overflow-hidden">
         <div className="relative h-full w-full transition-transform duration-300 group-hover:scale-110">
