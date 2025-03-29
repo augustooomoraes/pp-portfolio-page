@@ -38,16 +38,25 @@ export default function Page() {
 const brandProjects = [
   {
     title: "Thiago Candido",
+    url: "thiago-candido",
+    imageLight: ThiagoCandidoLight,
+    imageDark: ThiagoCandidoDark,
+  },
+  {
+    title: "Thiago Candido",
+    url: "thiago-candido",
     imageLight: ThiagoCandidoLight,
     imageDark: ThiagoCandidoDark,
   },
 //   {
 //     title: "Forte Soluções",
+//     url: "forte-solucoes",
 //     imageLight: ,
 //     imageDark: ,
 //   },
 //   {
 //     title: "Devocionário",
+//     url: "devocionario",
 //     imageLight: ,
 //     imageDark: ,
 //   },
