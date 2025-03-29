@@ -1,3 +1,4 @@
+import PortfolioCardDesignBrand from "@/app/ui/components/design-brand-cards";
 import classNames from "classnames";
 import clsx from "clsx";
 
@@ -6,6 +7,9 @@ import { Aleo } from "next/font/google";
 const nunito_sans = Nunito_Sans({ subsets: ["latin"] });
 const aleo = Aleo({ subsets: ["latin"], style: ["normal", "italic"] });
 
+import ThiagoCandidoLight from "@/../public/portfolio-design-brands/thiago-candido-light.png"
+import ThiagoCandidoDark from "@/../public/portfolio-design-brands/thiago-candido-dark.png"
+
 export const metadata = {
   title: "Design",
 };
@@ -13,6 +17,15 @@ export const metadata = {
 export default function Page() {
   return (
     <main className={classNames(nunito_sans.className)}>
+      <section className="mb-24">
+        <h1 className={clsx(aleo.className, "mb-8")}>Marcas</h1>
+        <div className="grid gap-6 sm:grid-cols-2">
+          {brandProjects.map((brandProject) => (
+            <PortfolioCardDesignBrand key={brandProject.title} {...brandProject} />
+          ))}
+        </div>
+      </section>
+
       <section>
         <h1 className={clsx(aleo.className, "mb-0")}>Editorial</h1>
         <span className={clsx(aleo.className, "mb-7 text-3xl italic font-light")}>(diagramação)</span>
@@ -21,3 +34,21 @@ export default function Page() {
     </main>
   );
 }
+
+const brandProjects = [
+  {
+    title: "Thiago Candido",
+    imageLight: ThiagoCandidoLight,
+    imageDark: ThiagoCandidoDark,
+  },
+//   {
+//     title: "Forte Soluções",
+//     imageLight: ,
+//     imageDark: ,
+//   },
+//   {
+//     title: "Devocionário",
+//     imageLight: ,
+//     imageDark: ,
+//   },
+]

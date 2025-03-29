@@ -1,4 +1,4 @@
-import PortfolioCard from "@/app/ui/components/web-cards";
+import PortfolioCardWeb from "@/app/ui/components/web-cards";
 import classNames from "classnames";
 
 import { Nunito_Sans } from "next/font/google";
@@ -20,7 +20,7 @@ export default function Page() {
     <main className={classNames(nunito_sans.className)}>
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {projects.map((project) => (
-        <PortfolioCard key={project.title} {...project} />
+        <PortfolioCardWeb key={project.title} {...project} />
       ))}
     </div>
     </main>
