@@ -41,7 +41,7 @@ export default function PortfolioCardDesignBrand({
           />
         </div>
 
-        <div className="absolute inset-0 flex items-center justify-center bg-black/[0.01] dark:bg-white/[0.01] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        <div className="absolute inset-0 flex items-center justify-center bg-white/70 dark:bg-black/70 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           <h3 className={classNames(aleo.className, "text-4xl font-medium text-center text-text-primary dark:text-text-primaryDark mx-6")}>
             {title}
           </h3>

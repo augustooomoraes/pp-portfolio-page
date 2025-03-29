@@ -9,6 +9,10 @@ const aleo = Aleo({ subsets: ["latin"], style: ["normal", "italic"] });
 
 import ThiagoCandidoLight from "@/../public/portfolio-design-brands/thiago-candido-light.png"
 import ThiagoCandidoDark from "@/../public/portfolio-design-brands/thiago-candido-dark.png"
+import ForteSolucoesLight from "@/../public/portfolio-design-brands/forte-solucoes-light.png"
+import ForteSolucoesDark from "@/../public/portfolio-design-brands/forte-solucoes-dark.png"
+import DevocionarioLight from "@/../public/portfolio-design-brands/devocionario-light.png"
+import DevocionarioDark from "@/../public/portfolio-design-brands/devocionario-dark.png"
 
 export const metadata = {
   title: "Design",
@@ -43,21 +47,15 @@ const brandProjects = [
     imageDark: ThiagoCandidoDark,
   },
   {
-    title: "Thiago Candido",
-    url: "thiago-candido",
-    imageLight: ThiagoCandidoLight,
-    imageDark: ThiagoCandidoDark,
+    title: "Forte Soluções",
+    url: "forte-solucoes",
+    imageLight: ForteSolucoesLight,
+    imageDark: ForteSolucoesDark,
   },
-//   {
-//     title: "Forte Soluções",
-//     url: "forte-solucoes",
-//     imageLight: ,
-//     imageDark: ,
-//   },
-//   {
-//     title: "Devocionário",
-//     url: "devocionario",
-//     imageLight: ,
-//     imageDark: ,
-//   },
+  {
+    title: "Devocionário",
+    url: "devocionario",
+    imageLight: DevocionarioLight,
+    imageDark: DevocionarioDark,
+  },
 ]
