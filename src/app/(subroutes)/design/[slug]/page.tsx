@@ -2,15 +2,17 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 
 import { Nunito_Sans } from "next/font/google";
-import { Aleo } from "next/font/google";
 const nunito_sans = Nunito_Sans({ subsets: ["latin"] });
-const aleo = Aleo({ subsets: ["latin"], style: ["normal", "italic"] });
 
 import brandProjects from "@/app/data/design-brand.json";
 import classNames from "classnames";
 
-export default function DesignDetail({ params }: { params: { slug: string } }) {
-  const project = brandProjects.find((item) => item.url === params.slug);
+export async function generateStaticParams() {
+  return brandProjects.map((item) => ({ slug: item.url }));
+}
+
+export default async function DesignDetail({ params }: {params: Promise<{ slug: string }>}) {
+  const project = brandProjects.find(async (item) => item.url === (await params).slug);
 
   if (!project) return notFound();
 
@@ -19,22 +21,15 @@ export default function DesignDetail({ params }: { params: { slug: string } }) {
 
       <div className="flex flex-col gap-6">
         {project.images?.map((image, index) =>
-          // <div className="max-w-3xl">
-            <Image
-              key={index}
-              src={image}
-              alt={`${project.title} – ${index + 1}}`}
-              className="rounded-lg"
-              width={1000}
-              height={0}
-              layout="responsive"
-              // style={{
-              //   objectFit: "contain",
-              //   maxWidth: "100%",
-              //   maxHeight: "100%",
-              // }}
-            />
-          // </div>
+          <Image
+            key={index}
+            src={image}
+            alt={`${project.title} – ${index + 1}}`}
+            className="rounded-lg"
+            width={1000}
+            height={0}
+            layout="responsive"
+          />
         )}
       </div>
 
