@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Thiago Candido",
+    "url": "thiago-candido",
+    "imageLight": "/portfolio-design-brands/thiago-candido-light.png",
+    "imageDark": "/portfolio-design-brands/thiago-candido-dark.png",
+
+    "subtitle": "Machine Learning",
+    "date": "Novembro de 2020",
+    "description": [
+      "Marca pessoal de consultoria.",
+      "A composição de curvas e linhas retas realça a modernidade da tecnologia de ponta oferecida juntamente com a estabilidade e segurança que um profissional experiente proporciona aos seus clientes.",
+      "Design elegante e moderno, sem perda em robustez."
+    ],
+    "images": [
+      "/portfolio-design-brands/thiago-candido-page-01.png",
+      "/portfolio-design-brands/thiago-candido-page-02.png"
+    ]
+  },
+  {
+    "title": "Forte Soluções",
+    "url": "forte-solucoes",
+    "imageLight": "/portfolio-design-brands/forte-solucoes-light.png",
+    "imageDark": "/portfolio-design-brands/forte-solucoes-dark.png",
+
+    "subtitle": "Serviços Gerais",
+    "date": "Março de 2025",
+    "description": [
+      "Bla",
+      "BlaBla",
+      "BlaBlaBla"
+    ],
+    "images": [
+    ]
+  },
+  {
+    "title": "Devocionário",
+    "url": "devocionario",
+    "imageLight": "/portfolio-design-brands/devocionario-light.png",
+    "imageDark": "/portfolio-design-brands/devocionario-dark.png",
+
+    "date": "Janeiro de 2025",
+    "description": [
+      "Bla",
+      "BlaBla",
+      "BlaBlaBla"
+    ],
+    "images": [
+    ]
+  }
+]

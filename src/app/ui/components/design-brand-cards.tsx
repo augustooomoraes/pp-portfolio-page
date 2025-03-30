@@ -9,8 +9,8 @@ const aleo = Aleo({ subsets: ["latin"] });
 interface PortfolioCardProps {
   title: string,
   url: string,
-  imageLight: StaticImageData,
-  imageDark: StaticImageData,
+  imageLight: string,
+  imageDark: string,
 }
 
 export default function PortfolioCardDesignBrand({
