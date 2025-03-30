@@ -29,6 +29,7 @@ export default function Page() {
         <h1 className={clsx(aleo.className, "mb-0")}>Editorial</h1>
         <span className={clsx(aleo.className, "mb-7 text-3xl italic font-light")}>(diagramação)</span>
         {/* TODO: see if i can load a preview image from a Google Drive file share link */}
+        <span className="block mt-6 text-2xl font-light">Em breve...</span>
       </section>
     </main>
   );
