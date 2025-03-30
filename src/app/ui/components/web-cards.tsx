@@ -23,7 +23,7 @@ interface PortfolioCardProps {
   githubUrl: string
 }
 
-export default function PortfolioCard({
+export default function PortfolioCardWeb({
   title = "Project Title",
   description = "A beautiful and responsive website built with modern technologies.",
   imageOg,
