@@ -9,6 +9,7 @@
     "date": "Novembro de 2020",
     "description": [
       "Marca pessoal de consultoria.",
+      "A relação binária entre as iniciais e o fundo revelam os números 0 e 1, fundamentos dos processos computacionais, símbolos de progressão, do acendimento, das possibilidades tomando forma.",
       "A composição de curvas e linhas retas realça a modernidade da tecnologia de ponta oferecida juntamente com a estabilidade e segurança que um profissional experiente proporciona aos seus clientes.",
       "Design elegante e moderno, sem perda em robustez."
     ],
@@ -26,11 +27,13 @@
     "subtitle": "Serviços Gerais",
     "date": "Março de 2025",
     "description": [
-      "Bla",
-      "BlaBla",
-      "BlaBlaBla"
+      "Empresa de serviços gerais de uma pequena cidade.",
+      "O hexágono é a figura do homem completo, harmonicamente situado no tempo e no espaço, com todo o seu potencial criativo e produtivo em ato. Com o devido conhecimento e ferramentas em mãos, capaz de realizar qualquer tarefa.",
+      "Também é a forma do baluarte, estrutura rígida e defensiva nas fortificações; das fachadas das casas; e dos favos de mel, que representam a perfeita organização e capacidade de reconstrução – aconteça o que acontecer, as abelhas são sempre capazes de reproduzir a estrutura original dos seus castelos, figurando a perfeita ordem, robustez e estabilidade."
     ],
     "images": [
+      "/portfolio-design-brands/forte-solucoes-page-01.png",
+      "/portfolio-design-brands/forte-solucoes-page-02.png"
     ]
   },
   {
@@ -41,11 +44,12 @@
 
     "date": "Janeiro de 2025",
     "description": [
-      "Bla",
-      "BlaBla",
-      "BlaBlaBla"
+      "Site de orações e manuais devocionais.",
+      "O Sol é a Unidade, o princípio de todas as coisas, que contém em si e emana a luz, o calor, a Vida. O coração é a vontade do homem: no ato de religião, centrado em Deus, o único repouso e fonte verdadeira para saciar seus anseios. Abrasado pelo Seu divino amor."
     ],
     "images": [
+      "/portfolio-design-brands/devocionario-page-01.png",
+      "/portfolio-design-brands/devocionario-page-02.png"
     ]
   }
 ]
