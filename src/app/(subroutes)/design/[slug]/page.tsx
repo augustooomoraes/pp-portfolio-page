@@ -11,8 +11,9 @@ export async function generateStaticParams() {
   return brandProjects.map((item) => ({ slug: item.url }));
 }
 
-export default async function DesignDetail({ params }: {params: Promise<{ slug: string }>}) {
-  const project = brandProjects.find(async (item) => item.url === (await params).slug);
+export default async function DesignDetail({ params }: { params: Promise<{ slug: string }>}) {
+  const { slug } = await params;
+  const project = brandProjects.find((item) => item.url === slug);
 
   if (!project) return notFound();
 
