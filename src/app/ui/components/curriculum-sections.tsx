@@ -368,6 +368,16 @@ export const experienceItems: ExperienceItemType[] = [
         <span className="font-bold dark:font-semibold">móveis e decoração</span>
         .
       </>,
+      <>
+        Serviços gerais em
+        {" "}
+        <span className="font-bold dark:font-semibold">reparos domésticos</span>
+        {" "}
+        e
+        {" "}
+        <span className="font-bold dark:font-semibold">construções simples</span>
+        .
+      </>,
     ],
   },
 ]
