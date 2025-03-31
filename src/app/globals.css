@@ -131,7 +131,7 @@ body {
     @apply max-w-content;
   }
   main {
-    @apply block w-full pt-[95px] my-0 mx-auto col-start-2 col-end-3
+    @apply block w-full pt-[200px] my-0 mx-auto col-start-2 col-end-3
   }
 
   h1 {
