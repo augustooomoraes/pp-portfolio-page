@@ -59,12 +59,13 @@ export default function GitHubContributionCalendar( {calendarData} : {calendarDa
 
   return (
     <div className="
-      flex flex-col gap-2 items-end
+      flex flex-col gap-1 items-end
+      max-w-full overflow-x-auto
       w-min mb-6 p-1.5 rounded-md
       bg-surface-hoverDark dark:bg-surface-hover
     ">
 
-      <div className="overflow-x-auto w-auto">
+      <div className="overflow-x-auto w-full pb-1">
         <div className="grid grid-rows-7 gap-0.5">
           {
             rows.map((row, rowIndex) => {
