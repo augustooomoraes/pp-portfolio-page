@@ -112,11 +112,13 @@ export function Navbar() {
           ref={menuRef}
           className={classNames(
             nunito_sans.className,
-            "md:hidden flex flex-col items-end gap-1",
-            "absolute top-20 right-10",
-            isOpenDdMenu ? "p-1 rounded-md opacity-100" : "p-0 rounded-none opacity-0",
-            "bg-surface-secondary dark:bg-surface-secondaryDark",
-            "shadow-lg text-right overflow-hidden transition-all duration-300",
+            "md:hidden flex flex-col items-end gap-1.5",
+            "absolute",
+            "left-4 right-4 max-w-[calc(100%-2rem)]",
+            isScrolled ? "top-20" : "top-32",
+            isOpenDdMenu ? "p-2.5 rounded-md opacity-100" : "p-0 rounded-none opacity-0",
+            "bg-surface-primary dark:bg-surface-primaryDark dark:border dark:border-surface-secondaryDark",
+            "shadow-lg text-center overflow-hidden transition-all duration-300",
           )}
         >
           {links.map((link, index) =>
@@ -138,12 +140,13 @@ function NavLink(
 ) {
   if (dropdown) {
     return visible ? (
-      <Link key={index} href={link.url} onClick={func}>
+      <Link key={index} href={link.url} onClick={func} className="w-full">
         <div className="
-          w-32 py-px pr-2
+          w-full rounded-md py-0.5
           transition-colors duration-300
-          hover:bg-surface-hover dark:hover:bg-surface-hoverDark
+          hover:bg-surface-hoverDark dark:hover:bg-surface-hover
           text-text-primary dark:text-text-primaryDark
+          text-center
         ">
           {link.title}
         </div>
