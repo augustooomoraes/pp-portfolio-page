@@ -72,7 +72,7 @@ export const links: ButtonType[] = [
   },
   {
     icon: FaMapMarkerAlt,
-    title: <span>São Francisco de Paula – RS</span>,
+    title: <span>Igrejinha – RS</span>,
     active: false,
   },
   {

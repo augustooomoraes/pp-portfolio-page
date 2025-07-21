@@ -1,6 +1,6 @@
 import Image from "next/image";
 import SocialButton, { links } from "./ui/components/social-button";
-import ProfilePic from "@/../public/profile-pic/me2edit.jpg"
+import ProfilePic from "@/../public/profile-pic/me0.jpg"
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
           <h1>Olá!</h1>
           {/* TODO: find out how word-spacing's handled on tailwind */}
           <HomeParagraph>
-            Chamo-me Augusto, moro em São Francisco de Paula – RS, trabalho com
+            Chamo-me Augusto, moro em Igrejinha – RS, trabalho com
             {" "}
             <HomeBold>desenvolvimento web</HomeBold>
             {" "}
@@ -19,15 +19,22 @@ export default function Home() {
             <HomeBold>diagramação editorial</HomeBold>.
           </HomeParagraph>
           <HomeParagraph>
-            Procuro serviços onde poderia
+            Gosto de criar produtos
             {" "}
-            <HomeBold>aplicar, estender e aprofundar</HomeBold>
+            <HomeBold>úteis, bem feitos e duráveis</HomeBold>
             {" "}
-            meus conhecimentos e habilidades em geral. Estou
+            — projetos em que beleza, funcionalidade e escalabilidade caminham juntas. Me movem o
             {" "}
-            <HomeBold>aberto a desafios</HomeBold>
+            <HomeBold>cuidado com os detalhes</HomeBold>
+            , a
             {" "}
-            e interessado em aprender o que for necessário para entregar os melhores resultados.
+            <HomeBold>clareza dos processos</HomeBold>
+            {" "}
+            e a possibilidade de
+            {" "}
+            <HomeBold>melhorar ferramentas e resultados</HomeBold>
+            {" "}
+            com organização, precisão e análise.
           </HomeParagraph>
         </section>
         <Image

@@ -174,12 +174,12 @@ export function CoursesSection( index: number, itemData: CourseItemType ) {
 export const educationItems: EducationItemType[] = [
   {
     title: "Design",
-    timeInterval: <span>jan.2018 – dez.2018 <span className="italic">(incompleto)</span></span>,
+    timeInterval: <span>jan.2018 – dez.2018</span>,
     place: "Universidade de Caxias do Sul",
   },
   {
     title: "Criação Digital",
-    timeInterval: <span>jul.2019 – dez.2020 <span className="italic">(incompleto)</span></span>,
+    timeInterval: <span>jul.2019 – dez.2020</span>,
     place: "Universidade de Caxias do Sul",
   },
 ]
@@ -195,7 +195,7 @@ export const habilityItems: HabilityItemType[]= [
   ],
   [
     <>React, Next.js</>,
-    <>Tailwind CSS</>,
+    <>Tailwind CSS, Shadcn UI</>,
     <>GitHub</>,
   ],
   [
@@ -205,7 +205,7 @@ export const habilityItems: HabilityItemType[]= [
   [
     <>Keycloak</>,
     <>Stripe <span className="font-extralight dark:!font-thin">(para assinaturas de SaaS)</span></>,
-    <>Integração de APIs</>,
+    <>REST APIs</>,
     <>OpenAI <span className="font-extralight dark:!font-thin">(integração, prompting)</span></>,
   ],
 ]
@@ -217,7 +217,7 @@ export const languageItems: LanguageItemType[] = [
   },
   {
     lang: "Inglês",
-    level: "avançado",
+    level: "fluente",
     info: "College Yes Cultural (2013–2018)",
   },
 ]
@@ -366,7 +366,12 @@ export const experienceItems: ExperienceItemType[] = [
         Elaboração de projetos para
         {" "}
         <span className="font-bold dark:font-semibold">móveis e decoração</span>
-        .
+        ;
+      </>,
+      <>
+        <span className="font-bold dark:font-semibold">Diagramação editorial</span>
+        {" "}
+        para fins múltiplos;
       </>,
       <>
         Serviços gerais em

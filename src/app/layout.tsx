@@ -50,6 +50,7 @@ export default function RootLayout({
         attribute="class"
         defaultTheme="system"
         enableSystem
+        disableTransitionOnChange
       >
         <body className={`${aleo.className} text-text-primary bg-surface-primary antialiased`}>
           <BackToTopButton />
